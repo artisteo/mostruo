@@ -4,6 +4,8 @@
 
 ![Overview diagram](diagrams/overview.svg)
 
+## Current
+Setup Vercel hosting for artists app
 ## Todo
 
 Add providers to overview
