@@ -12,8 +12,11 @@ class FirebaseRepository<T extends Entity> implements EntityRepository<T> {
   async getAll(): Promise<T[]> {
     const collectionRef = database.collection(this.collection);
     const snapshot = await collectionRef.get();
-    const results = [];
-    snapshot.forEach((doc) => results.push(doc.data()));
+    const results: T[] = [];
+    snapshot.forEach((doc) => {
+      const docData = doc.data() as T;
+      return results.push(docData);
+    });
     return results;
   }
 }
