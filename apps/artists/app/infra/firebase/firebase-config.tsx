@@ -1,7 +1,7 @@
 import type { ServiceAccount } from "firebase-admin/app";
 import { initializeApp, cert, getApps } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
-import serviceAccount from "./serviceAccountKey.json";
+import serviceAccount from "./service-account-key.json";
 
 const app =
   getApps().length === 0

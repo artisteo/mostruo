@@ -1,4 +1,5 @@
-import type { Entity, EntityRepository } from "../modules/base";
+import type Entity from "../../modules/_base/entity";
+import type EntityRepository from "../../modules/_base/repository";
 import { database } from "./firebase-config";
 
 class FirebaseRepository<T extends Entity> implements EntityRepository<T> {

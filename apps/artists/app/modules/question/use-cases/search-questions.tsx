@@ -1,5 +1,5 @@
-import type { EntityRepository } from "../../base";
-import { UseCase } from "../../base";
+import type EntityRepository from "../../_base/repository";
+import UseCase from "../../_base/use-case";
 import type Question from "../question";
 
 export default class SearchQuestions extends UseCase<Question> {

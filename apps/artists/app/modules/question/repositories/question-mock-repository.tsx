@@ -1,4 +1,4 @@
-import type { EntityRepository } from "../../base";
+import type EntityRepository from "../../_base/repository";
 import type Question from "../question";
 
 const QuestionMockRepository: EntityRepository<Question> = {
