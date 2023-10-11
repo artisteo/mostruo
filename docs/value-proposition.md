@@ -1,6 +1,10 @@
 # TL:DR
 
-Companies donate money to the causes they employees choose
+Organizations donate to the projects their members choose
+
+## Organizations
+
+
 
 # I am represent a company, why should I use this?
 

@@ -4,18 +4,16 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ARTISTS APP",
-  description: "Management app for artists",
+  title: "XX_PROJECT_TITLE_XX",
+  description: "XX_PROJECT_DESCRIPTION_XX",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}): JSX.Element {
+function RootLayout({ children }: { children: React.ReactNode }): JSX.Element {
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
     </html>
   );
 }
+
+export default RootLayout;

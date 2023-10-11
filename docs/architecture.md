@@ -1,6 +1,6 @@
-# XX_COMPANY_PLACEHOLDER_XX
+# XX_PROJECT_PLACEHOLDER_XX
 
-XX_COMPANY_PLACEHOLDER_XX is a organisation that allows companies to improve the relationship with their employees
+XX_PROJECT_PLACEHOLDER_XX is a organization that helps companies improve the relationship with their employees
 
 # Mostruo
 

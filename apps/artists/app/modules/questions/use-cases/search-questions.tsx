@@ -2,7 +2,7 @@ import type EntityRepository from "../../_base/repository";
 import UseCase from "../../_base/use-case";
 import type Question from "../question";
 
-export default class SearchQuestions extends UseCase<Question> {
+class SearchQuestions extends UseCase<Question> {
   constructor(protected repository: EntityRepository<Question>) {
     super(repository);
   }
@@ -10,3 +10,5 @@ export default class SearchQuestions extends UseCase<Question> {
     return this.repository.getAll();
   }
 }
+
+export default SearchQuestions;

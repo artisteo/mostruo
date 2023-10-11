@@ -2,4 +2,4 @@
 
 ## Overview
 
-![Overview diagram](diagrams/overview.svg)
+![Overview diagram](docs/diagrams/overview.svg)

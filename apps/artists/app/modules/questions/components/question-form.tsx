@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function QuestionForm(): JSX.Element {
+function QuestionForm(): JSX.Element {
   const [content, setContent] = useState("");
   const [isCreating, setIsCreating] = useState(false);
 
@@ -18,18 +18,15 @@ export default function QuestionForm(): JSX.Element {
 
   const canCreateQuestion = !isCreating && content.trim().length > 0;
 
+  const submitForm = async (): Promise<void> => {
+    setIsCreating(true);
+    await createQuestion();
+    setContent("");
+    setIsCreating(false);
+  };
+
   return (
-    <form
-      // TODO fix this
-      // eslint-disable-next-line @typescript-eslint/no-misused-promises -- todo fix this
-      onSubmit={async (e) => {
-        e.preventDefault();
-        setIsCreating(true);
-        await createQuestion();
-        setContent("");
-        setIsCreating(false);
-      }}
-    >
+    <form autoComplete="off">
       <div>
         <label htmlFor="content">Question: </label>
       </div>
@@ -45,10 +42,18 @@ export default function QuestionForm(): JSX.Element {
         />
       </div>
       <div>
-        <button disabled={!canCreateQuestion} type="submit">
-          Ask
+        <button
+          disabled={!canCreateQuestion}
+          onClick={() => {
+            void submitForm();
+          }}
+          type="button"
+        >
+          {isCreating ? "..." : "Ask"}
         </button>
       </div>
     </form>
   );
 }
+
+export default QuestionForm;

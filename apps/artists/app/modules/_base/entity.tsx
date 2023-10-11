@@ -1,4 +1,4 @@
-export default abstract class Entity {
+abstract class Entity {
   readonly id: string;
   protected created_at: string;
   constructor() {
@@ -9,3 +9,5 @@ export default abstract class Entity {
     return { ...this };
   }
 }
+
+export default Entity;
