@@ -1,7 +1,7 @@
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
-import CreateQuestion from "../../../core/modules/questions/use-cases/create-question";
 import QuestionFirestoreRepository from "../../../core/modules/questions/repositories/question-firestore-repository";
+import CreateQuestion from "../../../core/modules/questions/use-cases/create-question";
 
 interface RequestBody {
   content: string;
