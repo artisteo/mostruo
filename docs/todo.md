@@ -1,3 +1,2 @@
-- Refactor folders
 - Setup project enviroments
 - Setup database enviroments

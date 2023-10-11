@@ -1,5 +1,5 @@
-import type EntityRepository from "../../_base/repository";
-import UseCase from "../../_base/use-case";
+import type EntityRepository from "../../../base/repository";
+import UseCase from "../../../base/use-case";
 import type Question from "../question";
 
 class SearchQuestions extends UseCase<Question> {

@@ -1,4 +1,4 @@
-import Entity from "../_base/entity";
+import Entity from "../../base/entity";
 
 class Question extends Entity {
   constructor(public content: string) {

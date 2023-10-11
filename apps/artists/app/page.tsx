@@ -1,3 +1,3 @@
-import LandingPage from "./modules/landing/page";
+import LandingPage from "../core/modules/landing/page";
 
 export default LandingPage;
