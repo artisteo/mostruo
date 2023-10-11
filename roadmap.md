@@ -1,6 +1,6 @@
 # Roadmap
 
-- Update overview diagram with vercel hosting
+- Enviroments
 - API & Database
 - Monitoring
 - Analytics

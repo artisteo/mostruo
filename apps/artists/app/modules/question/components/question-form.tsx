@@ -21,7 +21,7 @@ export default function QuestionForm(): JSX.Element {
   return (
     <form
       // TODO fix this
-      // eslint-disable-next-line @typescript-eslint/no-misused-promises
+      // eslint-disable-next-line @typescript-eslint/no-misused-promises -- todo fix this
       onSubmit={async (e) => {
         e.preventDefault();
         setIsCreating(true);
