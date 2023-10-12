@@ -1,4 +1,2 @@
-- Setup husky on "artists"
-- Setup husky on "ui"
 - Setup project enviroments
 - Setup database enviroments

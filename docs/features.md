@@ -1,0 +1,7 @@
+- TurboRepo
+- AppRouter
+- Tsconfig
+- Eslint
+- Prettier
+- lint precommit
+- lint commit mssgs
