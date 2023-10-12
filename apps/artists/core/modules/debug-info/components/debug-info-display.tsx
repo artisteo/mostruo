@@ -4,13 +4,12 @@ import DebugInfo from "../debug-info";
 
 const DebugInfoDisplay = async (): Promise<JSX.Element> => {
   await new Promise((resolve) => {
-    setTimeout(resolve, 500);
+    setTimeout(resolve, 2000);
   });
   const debugInfo = new DebugInfo();
   return (
     <div>
       <hr />
-      <p>Start debug</p>
       <p>
         <Link href="/">Landing</Link>
       </p>
@@ -20,7 +19,6 @@ const DebugInfoDisplay = async (): Promise<JSX.Element> => {
       <p>
         <b>enviroment</b> {debugInfo.enviroment}
       </p>
-      <p>End debug</p>
       <hr />
     </div>
   );
