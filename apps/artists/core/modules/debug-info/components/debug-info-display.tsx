@@ -19,6 +19,9 @@ const DebugInfoDisplay = async (): Promise<JSX.Element> => {
       <p>
         <b>enviroment</b> {debugInfo.enviroment}
       </p>
+      <p>
+        <b>PUBLIC_ENV_VARIABLE</b> {debugInfo.NEXT_PUBLIC_DOT_ENV}
+      </p>
       <hr />
     </div>
   );
