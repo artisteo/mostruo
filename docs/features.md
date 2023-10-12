@@ -1,7 +1,3 @@
-- TurboRepo
-- AppRouter
-- Tsconfig
-- Eslint
-- Prettier
-- lint precommit
-- lint commit mssgs
+- Only build on app or app dependencies changes
+- Lint code pre commit
+- Lint commit mssgs pre commit
