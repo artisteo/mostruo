@@ -17,10 +17,10 @@ const DebugInfoDisplay = async (): Promise<JSX.Element> => {
         <Link href="/questions">Questions</Link>
       </p>
       <p>
-        <b>enviroment</b> {debugInfo.enviroment}
+        <b>NODE_ENV</b> {debugInfo.NODE_ENV}
       </p>
       <p>
-        <b>PUBLIC_ENV_VARIABLE</b> {debugInfo.NEXT_PUBLIC_DOT_ENV}
+        <b>NEXT_PUBLIC_DOT_ENV</b> {debugInfo.NEXT_PUBLIC_DOT_ENV}
       </p>
       <hr />
     </div>
