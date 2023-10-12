@@ -6,6 +6,7 @@
   "license": "WTFPL",
   "scripts": {
     "lint": "eslint .",
+    "lint-pre-commit": "eslint . --max-warnings=0",
     "generate:component": "turbo gen react-component"
   },
   "devDependencies": {

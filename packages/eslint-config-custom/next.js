@@ -38,17 +38,5 @@ module.exports = {
   // add rules configurations here
   rules: {
     "import/no-default-export": "off",
-    // TODO enforce absolute imports
-    // "no-restricted-imports": [
-    //   "error",
-    //   {
-    //     patterns: [
-    //       {
-    //         group: ["./*/", "**../"],
-    //         message: "Relative imports are not allowed.",
-    //       },
-    //     ],
-    //   },
-    // ],
   },
 };

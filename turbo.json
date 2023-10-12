@@ -7,6 +7,7 @@
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "lint": {},
+    "lint-pre-commit": {},
     "dev": {
       "cache": false,
       "persistent": true
