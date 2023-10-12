@@ -4,16 +4,17 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "lint-pre-commit":"turbo run lint-pre-commit",
+    "lint-pre-commit": "turbo run lint-pre-commit",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "prepare": "husky install"
+    "prepare": "is-ci || husky install"
   },
   "devDependencies": {
     "eslint": "^8.51.0",
+    "husky": "^8.0.0",
+    "is-ci": "^3.0.1",
     "prettier": "^3.0.3",
     "tsconfig": "workspace:*",
-    "turbo": "^1.10.15",
-    "husky": "^8.0.0"
+    "turbo": "^1.10.15"
   },
   "packageManager": "pnpm@8.6.10",
   "name": "artisteo"
