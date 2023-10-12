@@ -18,10 +18,10 @@ const DebugInfoDisplay = async (): Promise<JSX.Element> => {
       </p>
       <h3>Enviroment variables:</h3>
       <p>
-        <b>NODE_ENV (from process)</b> {debugInfo.NODE_ENV}
+        <b>NODE_ENV</b> {debugInfo.NODE_ENV}
       </p>
       <p>
-        <b>NEXT_PUBLIC_DOT_ENV (from .env or vercel)</b> {debugInfo.NEXT_PUBLIC_DOT_ENV}
+        <b>.env</b> {debugInfo.NEXT_PUBLIC_DOT_ENV}
       </p>
       <hr />
     </div>
