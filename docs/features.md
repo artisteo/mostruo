@@ -1,3 +1,5 @@
 - Only build on app or app dependencies changes
 - Lint code pre commit
 - Lint commit mssgs pre commit
+- Local, development (dont know when it is used), preview and production enviroments
+- 

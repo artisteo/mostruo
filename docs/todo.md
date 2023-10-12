@@ -1,2 +1,2 @@
-- Setup project enviroments
-- Setup database enviroments
+- Setup databases per enviroment
+- Setup auth
