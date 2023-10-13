@@ -1,9 +1,9 @@
-import DebugInfoDisplay from "../debug-info/components/debug-info-display";
+import DebugDisplay from "../debug/debug-display";
 
 function LandingPage(): JSX.Element {
   return (
     <main>
-      <DebugInfoDisplay />
+      <DebugDisplay />
       <h1>Landing</h1>
     </main>
   );

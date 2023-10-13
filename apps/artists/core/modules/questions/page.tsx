@@ -1,4 +1,4 @@
-import DebugInfoDisplay from "../debug-info/components/debug-info-display";
+import DebugInfoDisplay from "../debug-info/debug-info-display";
 import QuestionsList from "./components/questions-list";
 import QuestionForm from "./components/question-form";
 
