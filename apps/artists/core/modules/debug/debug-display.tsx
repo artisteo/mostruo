@@ -30,7 +30,7 @@ function DebugDisplay(): JSX.Element {
       <p>
         <button
           onClick={() => {
-            void debug.auth.login({ username: "victor" });
+            if (debug.auth.login) void debug.auth.login({ username: "victor" });
           }}
           type="button"
         >
@@ -38,7 +38,7 @@ function DebugDisplay(): JSX.Element {
         </button>
         <button
           onClick={() => {
-            void debug.auth.login({ username: "paco" });
+            if (debug.auth.login) void debug.auth.login({ username: "paco" });
           }}
           type="button"
         >
