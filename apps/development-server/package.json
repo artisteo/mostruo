@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "tsup --watch --onSuccess \"node dist/index.js\"",
-    "lint": "eslint .",
-    "lint-pre-commit": "eslint . --max-warnings=0"
+    "lint": "eslint src/",
+    "lint-pre-commit": "eslint src/ --max-warnings=0"
   },
   "dependencies": {
     "fastify": "^4.24.1",

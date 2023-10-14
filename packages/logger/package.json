@@ -10,7 +10,8 @@
   "scripts": {
     "build": "tsup",
     "watch": "tsup --watch",
-    "lint": "eslint src/"
+    "lint": "eslint src/",
+    "lint-pre-commit": "eslint src/ --max-warnings=0"
   },
   "devDependencies": {
     "@types/node": "^18.11.9",
