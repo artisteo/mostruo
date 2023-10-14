@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { log } from "logger";
 import User from "./user";
 import AuthContext from "./auth-context";
 
@@ -19,6 +20,7 @@ export function AuthProvider({ children }): React.JSX.Element {
       if (userFromProvider) {
         setUser(userFromProvider);
       }
+      log.client.info("cargado user");
       setIsLoading(false);
     }
     void loadUserFromManagedService();

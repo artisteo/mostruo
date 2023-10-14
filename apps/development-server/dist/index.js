@@ -32,11 +32,11 @@ fastify.get("/", async () => {
   });
   const logStream = import_node_fs.default.createWriteStream("logs.txt", { flags: "a" });
   const data = {
-    mili: "banili"
+    mili: "pili"
   };
   logStream.write(JSON.stringify(data));
-  logStream.end("\n");
-  return { hello: "world" };
+  logStream.end("\n,");
+  return { "\u041A\u0430\u043A \u0432\u044B": "\u043D\u043E\u0440\u043C\u0430\u043B\u044C\u043D\u043E" };
 });
 var start = async () => {
   try {

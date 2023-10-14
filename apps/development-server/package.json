@@ -8,7 +8,8 @@
     "lint-pre-commit": "eslint . --max-warnings=0"
   },
   "dependencies": {
-    "fastify": "^4.24.1"
+    "fastify": "^4.24.1",
+    "logger": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^20.5.9",

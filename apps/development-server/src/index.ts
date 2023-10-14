@@ -11,11 +11,11 @@ fastify.get("/", async () => {
   const logStream = fs.createWriteStream("logs.txt", { flags: "a" });
 
   const data = {
-    mili: "banili",
+    mili: "pili",
   };
   logStream.write(JSON.stringify(data));
-  logStream.end("\n");
-  return { hello: "world" };
+  logStream.end("\n,");
+  return { "Как вы": "нормально" };
 });
 
 const start = async (): Promise<void> => {
