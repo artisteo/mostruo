@@ -1,0 +1,20 @@
+{
+  "name": "development-server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsup --watch --onSuccess \"node dist/index.js\"",
+    "lint": "eslint .",
+    "lint-pre-commit": "eslint . --max-warnings=0"
+  },
+  "dependencies": {
+    "fastify": "^4.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.9",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "tsup": "^6.2.3",
+    "typescript": "^5.2.2"
+  }
+}

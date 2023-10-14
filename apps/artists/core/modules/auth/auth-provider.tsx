@@ -14,7 +14,8 @@ export function AuthProvider({ children }): React.JSX.Element {
       });
       //   const userFromProvider = null;
       const userFromProvider: User = new User("victor");
-      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- TODO implementation
+
+      //   eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- TODO implementation
       if (userFromProvider) {
         setUser(userFromProvider);
       }
