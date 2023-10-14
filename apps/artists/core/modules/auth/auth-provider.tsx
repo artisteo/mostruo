@@ -13,15 +13,16 @@ export function AuthProvider({ children }): React.JSX.Element {
       await new Promise((resolve) => {
         setTimeout(resolve, 4000);
       });
+
       //   const userFromProvider = null;
       const userFromProvider: User = new User("victor");
-
       //   eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- TODO implementation
       if (userFromProvider) {
         setUser(userFromProvider);
       }
-      log.client.info(userFromProvider);
+
       log.client.info("cargado user");
+      log.client.info(userFromProvider);
       setIsLoading(false);
     }
     void loadUserFromManagedService();

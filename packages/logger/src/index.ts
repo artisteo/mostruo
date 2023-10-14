@@ -19,16 +19,12 @@ const printLog = (log: Log): void => {
 };
 const sendLog = (log: Log): void => {
   if (process.env.NODE_ENV !== "development") {
-    // eslint-disable-next-line no-console -- We actually want to use console.log
-    console.log("skipped send log");
     return;
   }
   void fetch("http://localhost:3000/", {
     method: "POST",
     body: JSON.stringify(log),
   });
-  // eslint-disable-next-line no-console -- We actually want to use console.log
-  console.log("sent send log");
 };
 
 const handleLog = ({
