@@ -1,4 +1,4 @@
-type Source = "server" | "client";
+type Source = "📁📁📁 server" | "📱📱📱 client";
 
 type Type = "info" | "fetch" | "auth";
 
@@ -6,7 +6,7 @@ type Timestamp = string;
 
 type Content = string | object;
 
-interface Log {
+export interface Log {
   source: Source;
   type: Type;
   timestamp: Timestamp;
@@ -18,8 +18,17 @@ const printLog = (log: Log): void => {
   console.log(log.content);
 };
 const sendLog = (log: Log): void => {
+  if (process.env.NODE_ENV !== "development") {
+    // eslint-disable-next-line no-console -- We actually want to use console.log
+    console.log("skipped send log");
+    return;
+  }
+  void fetch("http://localhost:3000/", {
+    method: "POST",
+    body: JSON.stringify(log),
+  });
   // eslint-disable-next-line no-console -- We actually want to use console.log
-  console.log("lont sent over http", log);
+  console.log("sent send log");
 };
 
 const handleLog = ({
@@ -54,12 +63,12 @@ interface LogClient {
 export const log: LogClient = {
   server: {
     info: (content: Content) => {
-      handleLog({ source: "server", type: "info", content });
+      handleLog({ source: "📁📁📁 server", type: "info", content });
     },
   },
   client: {
     info: (content: Content) => {
-      handleLog({ source: "client", type: "info", content });
+      handleLog({ source: "📱📱📱 client", type: "info", content });
     },
   },
 };

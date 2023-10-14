@@ -8,8 +8,11 @@
     "lint-pre-commit": "eslint src/ --max-warnings=0"
   },
   "dependencies": {
+    "@fastify/cors": "^8.4.0",
     "fastify": "^4.24.1",
-    "logger": "workspace:*"
+    "logger": "workspace:*",
+    "pino": "^8.16.0",
+    "pino-pretty": "^10.2.3"
   },
   "devDependencies": {
     "@types/node": "^20.5.9",

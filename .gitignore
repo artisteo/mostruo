@@ -35,4 +35,4 @@ yarn-error.log*
 # vercel
 .vercel
 /.vscode
-/apps/development-server/logs.txt
+/apps/development-server/logs*

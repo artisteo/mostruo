@@ -20,6 +20,7 @@ export function AuthProvider({ children }): React.JSX.Element {
       if (userFromProvider) {
         setUser(userFromProvider);
       }
+      log.client.info(userFromProvider);
       log.client.info("cargado user");
       setIsLoading(false);
     }
