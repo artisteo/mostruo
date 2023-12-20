@@ -1,4 +1,6 @@
-import useEnvironment from "../../utils/use-environment";
+"use client";
+
+import useEnvironment from "./use-environment";
 
 function EnvironmentDisplay(): JSX.Element {
   const { NEXT_PUBLIC_DOT_ENV, NODE_ENV } = useEnvironment();
