@@ -1,2 +1,0 @@
-- Setup databases per enviroment
-- Setup auth
