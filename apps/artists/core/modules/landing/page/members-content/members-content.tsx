@@ -5,7 +5,7 @@ import logoutRequest from "../../../auth/use-cases/logout/logout-request";
 
 function MembersContent(): JSX.Element {
   const [isLoading, setIsLoading] = useState(false);
-  const { clearToken } = useAuth();
+  const { clearToken, claims } = useAuth();
   const onLogout = async (): Promise<void> => {
     setIsLoading(true);
     const request = await logoutRequest();
@@ -17,6 +17,7 @@ function MembersContent(): JSX.Element {
   return (
     <div>
       <h1>MembersContent</h1>
+      <p>email: {claims?.user.email}</p>
       <button
         disabled={isLoading}
         onClick={() => {

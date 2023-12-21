@@ -1,6 +1,8 @@
 import { hookstate, useHookstate } from "@hookstate/core";
 import { useCallback, useEffect, useMemo } from "react";
 import { getClientAuthCookie } from "./cookies-client";
+import type { Claims } from "./jwt";
+import { getTokenClaims } from "./jwt";
 
 interface Auth {
   token: string | null;
@@ -15,8 +17,10 @@ const initialState: Auth = {
 const authState = hookstate(initialState);
 
 const useAuth = (): {
-  isAnonymous: boolean;
+  token: string | null;
+  claims: Claims | null;
   isAuthReady: boolean;
+  isAnonymous: boolean;
   setToken: (token: string) => void;
   clearToken: () => void;
 } => {
@@ -57,8 +61,10 @@ const useAuth = (): {
     const isAuthReady = currentAuth.isAuthReady;
     const token = currentAuth.token;
     const isAnonymous = token === null;
+    const claims = isAnonymous ? null : getTokenClaims(token);
     return {
       token,
+      claims,
       isAuthReady,
       isAnonymous,
       setToken,
