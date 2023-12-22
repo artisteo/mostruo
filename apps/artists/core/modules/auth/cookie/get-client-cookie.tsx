@@ -1,6 +1,6 @@
-import AUTH_COOKIE_NAME from "./auth-cookie-name";
+import COOKIE_NAME from "./cookie-name";
 
-function getClientCookie(name: string): string | null {
+function getGenericClientCookie(name: string): string | null {
   try {
     const nameLenPlus = name.length + 1;
     return (
@@ -19,6 +19,8 @@ function getClientCookie(name: string): string | null {
   }
 }
 
-export function getClientAuthCookie(): string | null {
-  return getClientCookie(AUTH_COOKIE_NAME);
+function getClientCookie(): string | null {
+  return getGenericClientCookie(COOKIE_NAME);
 }
+
+export default getClientCookie;

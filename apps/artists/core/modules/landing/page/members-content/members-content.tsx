@@ -1,11 +1,11 @@
 "use client";
 import { useState } from "react";
 import useAuth from "../../../auth/use-auth";
-import logoutRequest from "../../../auth/use-cases/logout/logout-request";
+import logoutRequest from "../../../auth/logout/endpoints/logout-post-request";
 
 function MembersContent(): JSX.Element {
   const [isLoading, setIsLoading] = useState(false);
-  const { clearToken, claims } = useAuth();
+  const { clearToken, tokenPublicDto } = useAuth();
   const onLogout = async (): Promise<void> => {
     setIsLoading(true);
     const request = await logoutRequest();
@@ -17,7 +17,7 @@ function MembersContent(): JSX.Element {
   return (
     <div>
       <h1>MembersContent</h1>
-      <p>email: {claims?.user.email}</p>
+      <p>email: {tokenPublicDto?.user.email}</p>
       <button
         disabled={isLoading}
         onClick={() => {
