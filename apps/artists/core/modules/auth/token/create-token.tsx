@@ -1,7 +1,7 @@
 import * as jose from "jose";
+import type LoginDto from "../login/login-dto";
 import type TokenPublicDto from "./token-public-dto";
 import TOKEN_SECRET from "./token-secret";
-import LoginDto from "../login/login-dto";
 
 const createToken = async (loginDto: LoginDto): Promise<string> => {
   const tokenPublicDto: TokenPublicDto = {
