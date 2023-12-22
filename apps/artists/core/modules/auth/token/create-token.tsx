@@ -1,8 +1,14 @@
 import * as jose from "jose";
 import type TokenPublicDto from "./token-public-dto";
 import TOKEN_SECRET from "./token-secret";
+import LoginDto from "../login/login-dto";
 
-const createToken = async (tokenPublicDto: TokenPublicDto): Promise<string> => {
+const createToken = async (loginDto: LoginDto): Promise<string> => {
+  const tokenPublicDto: TokenPublicDto = {
+    user: {
+      email: loginDto.email,
+    },
+  };
   const secret = new TextEncoder().encode(TOKEN_SECRET);
   const alg = "HS256";
 
