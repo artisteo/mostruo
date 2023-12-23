@@ -1,15 +1,21 @@
-name: Graphviz CI
+name: Generate depedencies map
 on: [push]
 jobs:
   test:
-    name: Test on node ${{ matrix.node-version }} and ${{ matrix.os }}
+    name: Uses dot and Graphviz to generate a dependencies map on ${{ matrix.node-version }} and ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [ubuntu-latest]
     steps:
     - uses: actions/checkout@v3
     - name: Setup Graphviz
       uses: ts-graphviz/setup-graphviz@v1
     - name: Generate svg
       run: dot -Tpng apps/artists/dependencies/dependencies.dot -o outfile.png
+    - name: Archive dependencies map
+        uses: actions/upload-artifact@v3
+        with:
+          name: dependencies-map
+          path: |
+            outfile.png
