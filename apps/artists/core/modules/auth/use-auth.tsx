@@ -1,11 +1,11 @@
 import { hookstate, useHookstate } from "@hookstate/core";
 import { useCallback, useEffect, useMemo } from "react";
-import { getClientAuthCookie } from "./cookies-client";
-import type { Claims } from "./jwt";
-import { getTokenClaims } from "./jwt";
+import getAuthClientCookie from "./cookie/get-auth-client-cookie";
+import type TokenPublicDto from "./token/token-public-dto";
+import type Token from "./token/token";
 
 interface Auth {
-  token: string | null;
+  token: Token | null;
   isAuthReady: boolean;
 }
 
@@ -17,19 +17,18 @@ const initialState: Auth = {
 const authState = hookstate(initialState);
 
 const useAuth = (): {
-  token: string | null;
-  claims: Claims | null;
+  tokenPublicDto: TokenPublicDto | null;
   isAuthReady: boolean;
   isAnonymous: boolean;
-  setToken: (token: string) => void;
+  setToken: (token: Token) => void;
   clearToken: () => void;
 } => {
   const auth = useHookstate(authState);
 
   const loadClientAuthCookie = useCallback((): void => {
-    const clientAuthCookie = getClientAuthCookie();
+    const clientCookie = getAuthClientCookie();
     auth.set({
-      token: clientAuthCookie,
+      token: clientCookie,
       isAuthReady: true,
     });
   }, [auth]);
@@ -40,7 +39,7 @@ const useAuth = (): {
   }, []);
 
   const setToken = useCallback(
-    (token: string) => {
+    (token: Token) => {
       auth.set((currentState) => {
         const newState = { ...currentState, token };
         return newState;
@@ -61,14 +60,14 @@ const useAuth = (): {
     const isAuthReady = currentAuth.isAuthReady;
     const token = currentAuth.token;
     const isAnonymous = token === null;
-    const claims = isAnonymous ? null : getTokenClaims(token);
+    const tokenPublicDto = token ? token.getTokenPublicDto() : null;
+
     return {
-      token,
-      claims,
       isAuthReady,
       isAnonymous,
       setToken,
       clearToken,
+      tokenPublicDto,
     };
   }, [auth, clearToken, setToken]);
 
