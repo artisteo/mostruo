@@ -1,0 +1,15 @@
+name: Graphviz CI
+on: [push]
+jobs:
+  test:
+    name: Test on node ${{ matrix.node-version }} and ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup Graphviz
+      uses: ts-graphviz/setup-graphviz@v1
+    - name: Generate svg
+      run: dot -Tpng filename.dot -o outfile.png
