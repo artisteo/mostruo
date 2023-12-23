@@ -7,9 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "lint-pre-commit": "eslint . --max-warnings=0",
-    "map-dot": "npx depcruise core --no-config --include-only 'core' --output-type dot > dependencies/dependencies.dot",
-    "map-d2": "npx depcruise core --no-config --include-only 'core' --output-type d2 > dependencies/dependencies.d2"
+    "lint-pre-commit": "eslint . --max-warnings=0"
   },
   "dependencies": {
     "@hookstate/core": "^4.0.1",
@@ -30,7 +28,6 @@
     "@types/node": "^20.8.4",
     "@types/react": "^18.2.28",
     "@types/react-dom": "^18.2.13",
-    "dependency-cruiser": "^15.5.0",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "^5.2.2"

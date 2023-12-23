@@ -7,12 +7,14 @@
     "lint-pre-commit": "turbo run lint-pre-commit",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "prepare": "is-ci || husky install",
-    "lint-commit": "commitlint --edit "
+    "lint-commit": "commitlint --edit ",
+    "map-dot": "npx depcruise apps/artists/app --no-config --include-only 'apps/artists/' --output-type dot > dependencies.dot"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.7.2",
     "@commitlint/config-conventional": "^17.7.0",
     "@commitlint/types": "^17.4.4",
+    "dependency-cruiser": "^15.5.0",
     "dotenv-cli": "^7.3.0",
     "eslint": "^8.51.0",
     "husky": "^8.0.0",

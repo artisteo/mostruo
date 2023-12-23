@@ -9,12 +9,13 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: pnpm/action-setup@v2
         with:
-          node-version: 18
+            version: 8
       # - name: Setup Graphviz
       #   uses: ts-graphviz/setup-graphviz@v1
-      - run: npx depcruise apps/artists/core --no-config --include-only 'apps/artists/core' --output-type dot > dependencies.dot
+      - run: pnpm install dependency-cruiser
+      - run: pnpm run map-dot
       - name: Generate svg
         run: dot -Tpng dependencies.dot -o dependencies-map.png
       - name: Archive code coverage results
