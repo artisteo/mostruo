@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Setup Graphviz
         uses: ts-graphviz/setup-graphviz@v1
-      - run: npm install depcruise --save-dev
+      - run: npm install depcruise -g
       - run: npx depcruise apps/artists/core --no-config --include-only 'apps/artists/core' --output-type dot > dependencies.dot
       - name: Generate svg
         run: dot -Tpng dependencies.dot -o dependencies-map.png
