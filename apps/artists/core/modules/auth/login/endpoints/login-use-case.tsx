@@ -1,15 +1,23 @@
 import type { NextRequest } from "next/server";
 import { Ok, Err } from "oxide.ts";
+import type { Result } from "oxide.ts";
 import LoginDto from "../login-dto";
 import setAuthCookie from "../../cookie/set-auth-cookie";
-import type { LoginUseCaseResult } from "../../../_hex/utils/utils";
+import Token from "../../token/token";
 import {
   BadCredentialsError,
   BadDtoFormatError,
   BadJSONFormatError,
   InternalServerError,
-} from "../../../_hex/utils/utils";
-import Token from "../../token/token";
+} from "../../../_hex/utils/errors";
+
+type LoginUseCaseResult = Result<
+  Token,
+  | typeof InternalServerError
+  | typeof BadCredentialsError
+  | typeof BadJSONFormatError
+  | typeof BadDtoFormatError
+>;
 
 const loginUseCase = async (
   request: NextRequest
