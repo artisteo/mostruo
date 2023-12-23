@@ -1,8 +1,8 @@
-name: Generate depedencies map
+name: Add depedencies map
 on: [push]
 jobs:
   test:
-    name: Uses dot and Graphviz to generate a dependencies map on ${{ matrix.node-version }} and ${{ matrix.os }}
+    name: Add depedencies map
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -11,15 +11,13 @@ jobs:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v2
         with:
-            version: 8
+          version: 8
       - run: pnpm install dependency-cruiser -w
       - run: pnpm run map-dot
       - name: Setup Graphviz
         uses: ts-graphviz/setup-graphviz@v1
-      - name: Generate svg
+      - name: Generate png
         run: dot -Tpng dependencies.dot -o dependencies-map.png
-      - name: Archive code coverage results
-        uses: actions/upload-artifact@v3
+      - uses: EndBug/add-and-commit@v9
         with:
-          name: dependencies-map
-          path: dependencies-map.png
+          default_author: github_actions

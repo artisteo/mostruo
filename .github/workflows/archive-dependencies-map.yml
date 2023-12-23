@@ -1,0 +1,25 @@
+name: Archive depedencies map
+on: [push]
+jobs:
+  test:
+    name: Archive depedencies map
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - run: pnpm install dependency-cruiser -w
+      - run: pnpm run map-dot
+      - name: Setup Graphviz
+        uses: ts-graphviz/setup-graphviz@v1
+      - name: Generate png
+        run: dot -Tpng dependencies.dot -o dependencies-map.png
+      - name: Archive png
+        uses: actions/upload-artifact@v3
+        with:
+          name: dependencies-map
+          path: dependencies-map.png
