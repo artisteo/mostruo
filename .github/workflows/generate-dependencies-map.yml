@@ -12,4 +12,4 @@ jobs:
     - name: Setup Graphviz
       uses: ts-graphviz/setup-graphviz@v1
     - name: Generate svg
-      run: dot -Tpng filename.dot -o outfile.png
+      run: dot -Tpng apps/artists/dependencies/dependencies.dot -o outfile.png
