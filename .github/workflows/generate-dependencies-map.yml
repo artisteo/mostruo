@@ -14,7 +14,7 @@ jobs:
             version: 8
       # - name: Setup Graphviz
       #   uses: ts-graphviz/setup-graphviz@v1
-      - run: pnpm install dependency-cruiser
+      - run: pnpm install dependency-cruiser -w
       - run: pnpm run map-dot
       - name: Generate svg
         run: dot -Tpng dependencies.dot -o dependencies-map.png
