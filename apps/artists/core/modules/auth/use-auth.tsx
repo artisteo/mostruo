@@ -1,11 +1,11 @@
 import { hookstate, useHookstate } from "@hookstate/core";
 import { useCallback, useEffect, useMemo } from "react";
-import getClientCookie from "./cookie/get-client-cookie";
+import getAuthClientCookie from "./cookie/get-auth-client-cookie";
 import type TokenPublicDto from "./token/token-public-dto";
-import getTokenPublicDto from "./token/get-token-public-dto";
+import type Token from "./token/token";
 
 interface Auth {
-  token: string | null;
+  token: Token | null;
   isAuthReady: boolean;
 }
 
@@ -20,13 +20,13 @@ const useAuth = (): {
   tokenPublicDto: TokenPublicDto | null;
   isAuthReady: boolean;
   isAnonymous: boolean;
-  setToken: (token: string) => void;
+  setToken: (token: Token) => void;
   clearToken: () => void;
 } => {
   const auth = useHookstate(authState);
 
   const loadClientAuthCookie = useCallback((): void => {
-    const clientCookie = getClientCookie();
+    const clientCookie = getAuthClientCookie();
     auth.set({
       token: clientCookie,
       isAuthReady: true,
@@ -39,7 +39,7 @@ const useAuth = (): {
   }, []);
 
   const setToken = useCallback(
-    (token: string) => {
+    (token: Token) => {
       auth.set((currentState) => {
         const newState = { ...currentState, token };
         return newState;
@@ -60,7 +60,7 @@ const useAuth = (): {
     const isAuthReady = currentAuth.isAuthReady;
     const token = currentAuth.token;
     const isAnonymous = token === null;
-    const tokenPublicDto = token ? getTokenPublicDto(token) : null;
+    const tokenPublicDto = token ? token.getTokenPublicDto() : null;
 
     return {
       isAuthReady,

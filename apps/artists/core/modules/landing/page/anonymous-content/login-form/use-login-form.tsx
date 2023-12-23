@@ -3,6 +3,7 @@ import type { Dispatch, SetStateAction } from "react";
 import { useCallback, useMemo, useState } from "react";
 import loginRequest from "../../../../auth/login/endpoints/login-post-request";
 import useAuth from "../../../../auth/use-auth";
+import Token from "../../../../auth/token/token";
 
 function useLoginForm(): {
   email: string;
@@ -26,7 +27,7 @@ function useLoginForm(): {
   const onSubmit = useCallback(async () => {
     setIsLoading(true);
     const response = await loginRequest({ email, password });
-    const data = (await response.json()) as { token: string };
+    const data = (await response.json()) as { token: Token };
     const token = data.token;
     auth.setToken(token);
     setIsLoading(false);

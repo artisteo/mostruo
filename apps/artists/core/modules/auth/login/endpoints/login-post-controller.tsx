@@ -5,7 +5,7 @@ import {
   BadCredentialsError,
   BadDtoFormatError,
   BadJSONFormatError,
-} from "../../../_hex/utils";
+} from "../../../_hex/utils/utils";
 import loginUseCase from "./login-use-case";
 
 const LoginPostController = async (

@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
-import deleteServerCookie from "../cookie/delete-server-cookie";
+import deleteAuthCookie from "../cookie/delete-auth-cookie";
 
 const logoutUseCase = (): NextResponse => {
-  deleteServerCookie();
+  deleteAuthCookie();
   return NextResponse.json({}, { status: 200 });
 };
 
