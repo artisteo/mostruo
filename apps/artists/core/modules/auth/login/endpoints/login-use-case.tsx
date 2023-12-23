@@ -9,7 +9,7 @@ import {
   BadDtoFormatError,
   BadJSONFormatError,
   InternalServerError,
-} from "../../../_hex/utils/errors";
+} from "../../../../base/errors";
 
 type LoginUseCaseResult = Result<
   Token,

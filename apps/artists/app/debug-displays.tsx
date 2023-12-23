@@ -1,5 +1,5 @@
 "use client";
-import EnvironmentDisplay from "../core/modules/utils/environment-display";
+import EnvironmentDisplay from "../core/modules/environment/environment-display";
 import { fetchDefaultSettings } from "./settings";
 
 function DebugDisplays(): JSX.Element {
