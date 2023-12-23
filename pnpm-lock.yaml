@@ -68,12 +68,6 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
-      shallow-equal-object:
-        specifier: ^1.1.1
-        version: 1.1.1
-      ts-error:
-        specifier: ^1.0.6
-        version: 1.0.6
       ui:
         specifier: workspace:*
         version: link:../../packages/ui
@@ -5587,10 +5581,6 @@ packages:
       has-property-descriptors: 1.0.0
     dev: true
 
-  /shallow-equal-object@1.1.1:
-    resolution: {integrity: sha512-9DDzYRlzCwF2CemeF0aOFk5T5KMrjG7HldcW7utwYhA/limuGHn3No8KhpDE8BrO7GLaSRJumNKReipZBybd7A==}
-    dev: false
-
   /shebang-command@2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
     engines: {node: '>=8'}
@@ -5993,10 +5983,6 @@ packages:
     dependencies:
       typescript: 5.2.2
     dev: true
-
-  /ts-error@1.0.6:
-    resolution: {integrity: sha512-tLJxacIQUM82IR7JO1UUkKlYuUTmoY9HBJAmNWFzheSlDS5SPMcNIepejHJa4BpPQLAcbRhRf3GDJzyj6rbKvA==}
-    dev: false
 
   /ts-node@10.9.1(@types/node@20.5.1)(typescript@5.3.2):
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}

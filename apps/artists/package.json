@@ -19,8 +19,6 @@
     "oxide.ts": "^1.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "shallow-equal-object": "^1.1.1",
-    "ts-error": "^1.0.6",
     "ui": "workspace:*"
   },
   "devDependencies": {
