@@ -1,4 +1,4 @@
-import { getGenericClientCookie } from "../../../../cookies/get-generic-client-cookie";
+import { getGenericClientCookie } from "../../../../base/cookies/get-generic-client-cookie";
 import Token from "../../domain/token";
 
 function getAuthClientCookie(): Token | null {

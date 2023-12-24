@@ -4,7 +4,7 @@ import {
   BadCredentialsError,
   BadDtoFormatError,
   BadJSONFormatError,
-} from "../errors/errors";
+} from "../../../base/errors/errors";
 import { Result } from "result-type-ts";
 
 const LoginDtoValidator = jointz

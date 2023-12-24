@@ -1,4 +1,4 @@
-import { setGenericServerCookie } from "../../../cookies/set-generic-server-cookie";
+import { setGenericServerCookie } from "../../../base/cookies/set-generic-server-cookie";
 import Token from "./token";
 
 function setAuthCookie(token: Token): void {
