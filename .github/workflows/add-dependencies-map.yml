@@ -40,17 +40,21 @@ jobs:
       - name: Setup Graphviz
         uses: ts-graphviz/setup-graphviz@v1
 
+      - name: Generate main map mermaid
+        run: pnpm run generate-main-map-mermaid
+
       - name: Generate main map dot
         run: pnpm run generate-main-map-dot
 
-      - name: Generate main map image
+      - name: Generate main map image using previous step dot
         run: dot -Tpng main-map.dot -o main-map.png
 
       - name: Generate core map dot
         run: pnpm run generate-core-map-dot
 
-      - name: Generate core map imagen
+      - name: Generate core map imagen using previous step dot
         run: dot -Tpng core-map.dot -o core-map.png
+
 
       - uses: EndBug/add-and-commit@v9
         with:

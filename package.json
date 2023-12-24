@@ -8,6 +8,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "prepare": "is-ci || husky install",
     "lint-commit": "commitlint --edit ",
+    "generate-main-map-mermaid":"npx depcruise apps/artists/app --no-config --include-only 'apps/artists/' --output-type mermaid > main-map.mermaid",
     "generate-main-map-dot": "npx depcruise apps/artists/app --no-config --include-only 'apps/artists/' --output-type dot > main-map.dot",
     "generate-core-map-dot": "npx depcruise apps/artists/core --no-config --include-only 'apps/artists/' --output-type dot > core-map.dot"
   },
