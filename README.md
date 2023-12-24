@@ -8,9 +8,11 @@ Diagrams are generated on push with The Add Dependencies Map Github Action
 
 Todo
 
+![Core](core-map.mermaid)
+
 ### Core dot + Graphviz diagram
 
-![Main](core-map.png)
+![Full](core-map.png)
 
 ### Full mermaid diagram
 
@@ -18,4 +20,4 @@ Todo
 
 ### Full dot + Graphviz diagram
 
-![Main](main-map.png)
+![Full](main-map.png)
