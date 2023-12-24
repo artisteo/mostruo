@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import useAuth from "../../../auth/use-auth";
-import logoutRequest from "../../../auth/logout/endpoints/logout-post-request";
+import logoutRequest from "../../../auth/logout/endpoints/logout-post-fetch";
 
 function MembersContent(): JSX.Element {
   const [isLoading, setIsLoading] = useState(false);

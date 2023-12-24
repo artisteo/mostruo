@@ -1,7 +1,7 @@
 import type { NextRequest } from "next/server";
 import { Ok, Err } from "oxide.ts";
 import type { Result } from "oxide.ts";
-import LoginDto from "../login-dto";
+import LoginDto from "./login-dto";
 import setAuthCookie from "../../cookie/set-auth-cookie";
 import Token from "../../token/token";
 import {
