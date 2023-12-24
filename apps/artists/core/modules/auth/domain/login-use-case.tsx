@@ -7,7 +7,7 @@ import {
   BadJSONFormatError,
   InternalServerError,
 } from "../errors/errors";
-import LoginDto from "../application/login-dto";
+import LoginDto from "./login-dto";
 import Token from "./token";
 import setAuthCookie from "./set-auth-cookie";
 
