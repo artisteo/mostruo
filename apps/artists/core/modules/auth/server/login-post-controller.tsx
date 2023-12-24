@@ -1,6 +1,6 @@
 import type { NextRequest, NextResponse } from "next/server";
+import loginUseCase from "../domain/login-use-case";
 import HttpResponse from "./http-response";
-import loginUseCase from "../../domain/login-use-case";
 
 const LoginPostController = async (
   request: NextRequest

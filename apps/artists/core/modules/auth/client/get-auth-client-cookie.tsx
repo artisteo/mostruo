@@ -1,4 +1,4 @@
-import Token from "../../domain/token";
+import Token from "../domain/token";
 
 function getGenericClientCookie(name: string): string | null {
   try {

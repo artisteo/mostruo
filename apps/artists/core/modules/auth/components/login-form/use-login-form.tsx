@@ -1,8 +1,9 @@
 "use client";
 import type { Dispatch, SetStateAction } from "react";
 import { useCallback, useMemo, useState } from "react";
-import useAuth from "../../application/client/use-auth";
-import Token from "../../domain/token";
+import useAuth from "../../client/use-auth";
+import type Token from "../../domain/token";
+
 
 function useLoginForm(): {
   email: string;

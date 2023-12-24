@@ -1,5 +1,5 @@
-import LogoutGetController from "../../../../core/modules/auth/application/server/logout-get-controller";
-import LogoutPostController from "../../../../core/modules/auth/application/server/logout-post-controller";
+import LogoutGetController from "../../../../core/modules/auth/server/logout-get-controller";
+import LogoutPostController from "../../../../core/modules/auth/server/logout-post-controller";
 
 const GET = LogoutGetController;
 const POST = LogoutPostController;
