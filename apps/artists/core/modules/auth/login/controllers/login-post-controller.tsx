@@ -1,11 +1,11 @@
 import type { NextRequest, NextResponse } from "next/server";
 import { match } from "oxide.ts";
-import HttpResponse from "../../../../base/http-response";
+import HttpResponse from "../../../../http/http-response";
 import {
   BadCredentialsError,
   BadDtoFormatError,
   BadJSONFormatError,
-} from "../../../../base/errors";
+} from "../../../../errors/errors";
 import loginUseCase from "../login-use-case";
 
 const LoginPostController = async (
