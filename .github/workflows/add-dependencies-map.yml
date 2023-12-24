@@ -13,7 +13,7 @@ jobs:
         with:
           version: 8
       - run: pnpm install dependency-cruiser -w
-      - run: pnpm run map-dot
+      - run: pnpm run generate-depedencies-maps
       - name: Setup Graphviz
         uses: ts-graphviz/setup-graphviz@v1
       - name: Generate dependencies map
