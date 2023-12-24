@@ -1,7 +1,7 @@
 import type { NextResponse } from "next/server";
 import { match } from "oxide.ts";
-import HttpResponse from "../../../../http/http-response";
-import logoutUseCase from "../logout-use-case";
+import HttpResponse from "../http-response";
+import logoutUseCase from "../../domain/logout-use-case";
 
 const LogoutPostController = (): NextResponse => {
   const result = logoutUseCase();

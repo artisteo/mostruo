@@ -1,10 +1,10 @@
 import { hookstate, useHookstate } from "@hookstate/core";
 import { useCallback, useEffect, useMemo } from "react";
-import type Token from "../token/token";
-import type TokenPublicDto from "../token/token-public-dto";
-import type LoginDto from "../login/login-dto";
-import loginPostFetch from "../login/endpoints/login-post-fetch";
-import logoutPostFetch from "../logout/endpoints/logout-post-fetch";
+import type Token from "../../domain/token";
+import type TokenPublicDto from "../../domain/token-public-dto";
+import type LoginDto from "../login-dto";
+import loginPostFetch from "./login-post-fetch";
+import logoutPostFetch from "./logout-post-fetch";
 import getAuthClientCookie from "./get-auth-client-cookie";
 
 interface Auth {
@@ -31,7 +31,6 @@ const useAuth = (): {
   const auth = useHookstate(authState);
 
   const loadClientAuthCookie = useCallback((): void => {
-    console.log("🔥 ~ loadClientAuthCookie:", loadClientAuthCookie);
     const clientCookie = getAuthClientCookie();
     auth.set({
       token: clientCookie,

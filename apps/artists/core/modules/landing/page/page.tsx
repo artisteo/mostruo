@@ -1,7 +1,7 @@
 "use client";
 import SETTINGS from "../../../../settings";
 import EnvironmentDisplay from "../../environment/environment-display";
-import useAuth from "../../auth/client/use-auth";
+import useAuth from "../../auth/application/client/use-auth";
 import MembersContent from "./members-content/members-content";
 import AnonymousContent from "./anonymous-content/anonymous-content";
 

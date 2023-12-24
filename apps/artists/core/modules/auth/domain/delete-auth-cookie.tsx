@@ -1,5 +1,5 @@
 import { deleteGenericServerCookie } from "../../../cookies/delete-generic-server-cookie";
-import Token from "../token/token";
+import Token from "./token";
 
 
 function deleteAuthCookie(): void {

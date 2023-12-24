@@ -1,15 +1,15 @@
 import type { NextRequest } from "next/server";
 import { Ok, Err } from "oxide.ts";
 import type { Result } from "oxide.ts";
-import Token from "../token/token";
+import Token from "./token";
 import {
   BadCredentialsError,
   BadDtoFormatError,
   BadJSONFormatError,
   InternalServerError,
 } from "../../../errors/errors";
-import setAuthCookie from "../server/set-auth-cookie";
-import LoginDto from "./login-dto";
+import setAuthCookie from "./set-auth-cookie";
+import LoginDto from "../application/login-dto";
 
 type LoginUseCaseResult = Result<
   Token,

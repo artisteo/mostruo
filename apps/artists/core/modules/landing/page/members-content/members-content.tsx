@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import useAuth from "../../../auth/client/use-auth";
+import useAuth from "../../../auth/application/client/use-auth";
 
 function MembersContent(): JSX.Element {
   const [isLoading, setIsLoading] = useState(false);
