@@ -1,0 +1,92 @@
+flowchart LR
+
+subgraph 0["apps"]
+subgraph 1["artists"]
+subgraph 2["core"]
+subgraph 3["modules"]
+subgraph 4["auth"]
+subgraph 5["client"]
+6["get-auth-client-cookie.tsx"]
+9["login-post-fetch.tsx"]
+A["logout-post-fetch.tsx"]
+B["use-auth.tsx"]
+end
+subgraph 7["domain"]
+8["token.tsx"]
+O["delete-auth-cookie.tsx"]
+P["errors.tsx"]
+Q["login-dto.tsx"]
+R["login-use-case.tsx"]
+S["set-auth-cookie.tsx"]
+T["logout-use-case.tsx"]
+U["token-public-dto.tsx"]
+end
+subgraph C["components"]
+subgraph D["anonymous-content"]
+E["anonymous-content.tsx"]
+end
+subgraph F["login-form"]
+G["login-form.tsx"]
+H["use-login-form.tsx"]
+end
+subgraph I["register-form"]
+J["register-form.tsx"]
+end
+subgraph K["auth-section"]
+L["auth-section.tsx"]
+end
+subgraph M["members-content"]
+N["members-content.tsx"]
+end
+end
+subgraph V["server"]
+W["http-response.tsx"]
+X["login-get-controller.tsx"]
+Y["login-post-controller.tsx"]
+Z["logout-get-controller.tsx"]
+10["logout-post-controller.tsx"]
+end
+end
+subgraph 11["environment"]
+12["environment-display.tsx"]
+13["use-environment.tsx"]
+end
+subgraph 14["landing"]
+15["page.tsx"]
+end
+end
+end
+16["settings.tsx"]
+end
+end
+6-->8
+B-->6
+B-->9
+B-->A
+E-->G
+E-->J
+G-->H
+H-->B
+L-->B
+L-->E
+L-->N
+N-->B
+O-->8
+Q-->P
+R-->P
+R-->Q
+R-->S
+R-->8
+S-->8
+T-->O
+T-->P
+X-->W
+Y-->R
+Y-->W
+Z-->W
+10-->T
+10-->W
+12-->13
+15-->16
+15-->L
+15-->12
