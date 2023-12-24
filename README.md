@@ -1,3 +1,5 @@
 # Mostruo
 
-![Dependencies map](dependencies-map.png)
+![Main](main-map.png)
+
+![Core](core-map.png)

@@ -93,9 +93,6 @@ importers:
       '@types/react-dom':
         specifier: ^18.2.13
         version: 18.2.13
-      dependency-cruiser:
-        specifier: ^15.5.0
-        version: 15.5.0
       eslint-config-custom:
         specifier: workspace:*
         version: link:../../packages/eslint-config-custom

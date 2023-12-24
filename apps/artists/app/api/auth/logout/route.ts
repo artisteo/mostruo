@@ -1,6 +1,6 @@
-import LogoutPost from "../../../../core/modules/auth/logout/endpoints/logout-post";
-import LogoutGet from "../../../../core/modules/auth/logout/endpoints/logout-get";
+import LogoutGetController from "../../../../core/modules/auth/logout/endpoints/logout-get-controller";
+import LogoutPostController from "../../../../core/modules/auth/logout/endpoints/logout-post-controller";
 
-const POST = LogoutPost;
-const GET = LogoutGet;
-export { POST, GET };
+const GET = LogoutGetController;
+const POST = LogoutPostController;
+export { GET, POST };

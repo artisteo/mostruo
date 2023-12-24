@@ -8,17 +8,33 @@ jobs:
       matrix:
         os: [ubuntu-latest]
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v2
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
         with:
           version: 8
-      - run: pnpm install dependency-cruiser -w
-      - run: pnpm run map-dot
+
       - name: Setup Graphviz
         uses: ts-graphviz/setup-graphviz@v1
-      - name: Generate png
-        run: dot -Tpng dependencies.dot -o dependencies-map.png
+
+      - name: Install dependency-cruiser globally
+        run: pnpm install dependency-cruiser -w
+
+      - name: Generate main map dot
+        run: pnpm run generate-main-map-dot
+
+      - name: Generate main map image
+        run: dot -Tpng main-map.dot -o main-map.png
+
+      - name: Generate core map dot
+        run: pnpm run generate-core-map-dot
+
+      - name: Generate core map imagen
+        run: dot -Tpng core-map.dot -o core-map.png
+
       - uses: EndBug/add-and-commit@v9
         with:
-          message: "[CHORE] Add depedencies map"
-          add: "dependencies-map.png"
+            message: "[CHORE] Add depedencies map"
+            add: "*map.png"
