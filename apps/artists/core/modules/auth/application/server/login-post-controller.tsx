@@ -5,15 +5,16 @@ import {
   BadCredentialsError,
   BadDtoFormatError,
   BadJSONFormatError,
-} from "../../../../errors/errors";
+} from "../../errors/errors";
 import loginUseCase from "../../domain/login-use-case";
+import type Token from "../../domain/token";
 
 const LoginPostController = async (
   request: NextRequest
 ): Promise<NextResponse> => {
   const result = await loginUseCase(request);
   return match(result, {
-    Ok: (token) => HttpResponse.OK(token),
+    Ok: (token: Token) => HttpResponse.OK(token),
     Err: (err) => {
       if (err === BadDtoFormatError || err === BadJSONFormatError)
         return HttpResponse.BadRequest(err);

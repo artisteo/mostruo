@@ -1,6 +1,6 @@
 import jointz from "jointz";
 import type { NextRequest } from "next/server";
-import { BadDtoFormatError, BadJSONFormatError } from "../../../errors/errors";
+import { BadDtoFormatError, BadJSONFormatError } from "../errors/errors";
 
 const LoginDtoValidator = jointz
   .object({
