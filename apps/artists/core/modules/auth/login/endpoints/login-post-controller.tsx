@@ -8,6 +8,8 @@ import {
 } from "../../../../base/errors";
 import loginUseCase from "./login-use-case";
 
+export const LOGIN_POST_PATH = "/api/auth/login";
+
 const LoginPostController = async (
   request: NextRequest
 ): Promise<NextResponse> => {
