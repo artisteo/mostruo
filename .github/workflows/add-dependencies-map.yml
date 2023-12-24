@@ -11,30 +11,55 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v4
 
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 8
 
-      - name: Setup Graphviz
-        uses: ts-graphviz/setup-graphviz@v1
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
       - name: Install dependency-cruiser globally
         run: pnpm install dependency-cruiser -w
 
+      - name: Setup Graphviz
+        uses: ts-graphviz/setup-graphviz@v1
+
+      - name: Generate main map mermaid
+        run: pnpm run generate-main-map-mermaid
+
       - name: Generate main map dot
         run: pnpm run generate-main-map-dot
 
-      - name: Generate main map image
+      - name: Generate main map image using previous step dot
         run: dot -Tpng main-map.dot -o main-map.png
+
+      - name: Generate core map mermaid
+        run: pnpm run generate-core-map-mermaid
 
       - name: Generate core map dot
         run: pnpm run generate-core-map-dot
 
-      - name: Generate core map imagen
+      - name: Generate core map imagen using previous step dot
         run: dot -Tpng core-map.dot -o core-map.png
+
 
       - uses: EndBug/add-and-commit@v9
         with:
-            message: "[GH ACTIONS CHORE] Add dependencies map"
-            add: "*-map.png"
+          message: "[GH ACTIONS CHORE] Add dependencies map"
+          add: "*-map.*"
