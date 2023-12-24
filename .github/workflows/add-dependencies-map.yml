@@ -11,16 +11,34 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v4
 
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 8
 
-      - name: Setup Graphviz
-        uses: ts-graphviz/setup-graphviz@v1
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
       - name: Install dependency-cruiser globally
         run: pnpm install dependency-cruiser -w
+
+      - name: Setup Graphviz
+        uses: ts-graphviz/setup-graphviz@v1
 
       - name: Generate main map dot
         run: pnpm run generate-main-map-dot
@@ -36,5 +54,5 @@ jobs:
 
       - uses: EndBug/add-and-commit@v9
         with:
-            message: "[GH ACTIONS CHORE] Add dependencies map"
-            add: "*-map.png"
+          message: "[GH ACTIONS CHORE] Add dependencies map"
+          add: "*-map.png"
