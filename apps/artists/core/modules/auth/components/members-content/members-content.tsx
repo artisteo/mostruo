@@ -1,22 +1,22 @@
 "use client";
 import { useState } from "react";
-import useAuth from "../../../auth/application/client/use-auth";
+import useAuth from "../../application/client/use-auth";
 
 function MembersContent(): JSX.Element {
   const [isLoading, setIsLoading] = useState(false);
-  const { clearToken, tokenPublicDto, logoutPostFetch } = useAuth();
+  const auth = useAuth();
   const onLogout = async (): Promise<void> => {
     setIsLoading(true);
-    const request = await logoutPostFetch();
+    const request = await auth.logoutPostFetch();
     await request.json();
-    clearToken();
+    auth.clearToken();
     setIsLoading(false);
   };
 
   return (
     <div>
       <h1>MembersContent</h1>
-      <p>email: {tokenPublicDto?.user.email}</p>
+      <p>email: {auth.tokenPublicDto?.user.email}</p>
       <button
         disabled={isLoading}
         onClick={() => {
