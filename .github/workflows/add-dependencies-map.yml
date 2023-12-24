@@ -16,9 +16,11 @@ jobs:
       - run: pnpm run map-dot
       - name: Setup Graphviz
         uses: ts-graphviz/setup-graphviz@v1
-      - name: Generate png
-        run: dot -Tpng dependencies.dot -o dependencies-map.png
+      - name: Generate dependencies map
+        run: dot -Tpng dependencies-map.dot -o dependencies-map/dependencies-map.png
+      - name: Generate dependencies map (core)
+        run: dot -Tpng dependencies-map-core.dot -o dependencies-map/dependencies-map-core.png
       - uses: EndBug/add-and-commit@v9
         with:
           message: "Add depedencies map"
-          add: "dependencies-map.png"
+          add: "dependencies-map/**.png"
