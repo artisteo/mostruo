@@ -1,10 +1,10 @@
 import { hookstate, useHookstate } from "@hookstate/core";
 import { useCallback, useEffect, useMemo } from "react";
+import type Token from "../token/token";
+import type TokenPublicDto from "../token/token-public-dto";
+import type LoginDto from "../login/login-dto";
+import loginPostFetch from "../login/endpoints/login-post-fetch";
 import getAuthClientCookie from "./get-auth-client-cookie";
-import type TokenPublicDto from "../../token/token-public-dto";
-import type Token from "../../token/token";
-import loginPostFetch from "../../login/endpoints/login-post-fetch";
-import type LoginDto from "../../login/login-dto";
 
 interface Auth {
   token: Token | null;

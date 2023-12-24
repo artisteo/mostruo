@@ -1,7 +1,6 @@
 import type { NextRequest } from "next/server";
 import { Ok, Err } from "oxide.ts";
 import type { Result } from "oxide.ts";
-import setAuthCookie from "../service/server/set-auth-cookie";
 import Token from "../token/token";
 import {
   BadCredentialsError,
@@ -9,6 +8,7 @@ import {
   BadJSONFormatError,
   InternalServerError,
 } from "../../../errors/errors";
+import setAuthCookie from "../server/set-auth-cookie";
 import LoginDto from "./login-dto";
 
 type LoginUseCaseResult = Result<

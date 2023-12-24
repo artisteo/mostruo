@@ -1,5 +1,5 @@
-import Token from "../../token/token";
-import { setGenericServerCookie } from "../../../../cookies/set-generic-server-cookie";
+import { setGenericServerCookie } from "../../../cookies/set-generic-server-cookie";
+import Token from "../token/token";
 
 function setAuthCookie(token: Token): void {
   const value = token.toString();
