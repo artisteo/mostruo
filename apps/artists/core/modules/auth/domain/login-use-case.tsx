@@ -1,14 +1,15 @@
 import type { NextRequest } from "next/server";
 import { Result } from "result-type-ts";
-import type { BadJSONFormatError ,
+import type {
+  BadJSONFormatError,
   BadCredentialsError,
-  BadDtoFormatError} from "./errors";
-import {
-  InternalError,
+  BadDtoFormatError,
 } from "./errors";
+import { InternalError } from "./errors";
 import LoginDto from "./login-dto";
 import Token from "./token";
 import setAuthCookie from "./set-auth-cookie";
+import User from "./user";
 
 const loginUseCase = async (
   request: NextRequest
@@ -32,8 +33,8 @@ const loginUseCase = async (
       return validateResult;
     }
     //
-    const verifyResult = LoginDto.verifyCredentials(loginDto);
-    if (verifyResult.isFailure) return verifyResult;
+    const findOneByLoginDtoResult = await User.findOneByLoginDto(loginDto);
+    if (findOneByLoginDtoResult.isFailure) return findOneByLoginDtoResult;
     //
     const token = await Token.createToken(loginDto.email);
     setAuthCookie(token);

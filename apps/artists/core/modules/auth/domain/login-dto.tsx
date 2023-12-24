@@ -56,15 +56,6 @@ class LoginDto {
     }
     return Result.success(true);
   }
-
-  public static verifyCredentials(
-    loginDto: LoginDto
-  ): Result<boolean, typeof BadCredentialsError> {
-    if (loginDto.email !== "1" || loginDto.password !== "1") {
-      return Result.failure(BadCredentialsError);
-    }
-    return Result.success(true);
-  }
 }
 
 export default LoginDto;
