@@ -49,6 +49,9 @@ jobs:
       - name: Generate main map image using previous step dot
         run: dot -Tpng main-map.dot -o main-map.png
 
+      - name: Generate core map mermaid
+        run: pnpm run generate-core-map-mermaid
+
       - name: Generate core map dot
         run: pnpm run generate-core-map-dot
 
