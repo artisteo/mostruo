@@ -26,15 +26,15 @@ jobs:
         run: pnpm run generate-main-map-dot
 
       - name: Generate main map image
-        run: dot -Tpng main-map.dot -o maps/main-map.png
+        run: dot -Tpng main-map.dot -o dependencies-maps/main-map.png
 
       - name: Generate core map dot
         run: pnpm run generate-core-map-dot
 
       - name: Generate core map imagen
-        run: dot -Tpng core-map.dot -o maps/core-map.png
+        run: dot -Tpng core-map.dot -o dependencies-maps/core-map.png
 
       - uses: EndBug/add-and-commit@v9
         with:
           message: "Add dependencies map"
-          add: "maps/**.png"
+          add: "dependencies-maps/**.png"
