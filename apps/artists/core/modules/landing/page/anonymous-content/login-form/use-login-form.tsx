@@ -1,7 +1,7 @@
 "use client";
 import type { Dispatch, SetStateAction } from "react";
 import { useCallback, useMemo, useState } from "react";
-import useAuth from "../../../../auth/use-auth";
+import useAuth from "../../../../auth/service/client/use-auth";
 import type Token from "../../../../auth/token/token";
 import loginPostFetch from "../../../../auth/login/endpoints/login-post-fetch";
 
