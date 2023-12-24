@@ -2,7 +2,6 @@
 import type { Dispatch, SetStateAction } from "react";
 import { useCallback, useMemo, useState } from "react";
 import type Token from "../../../../auth/token/token";
-import loginPostFetch from "../../../../auth/login/endpoints/login-post-fetch";
 import useAuth from "../../../../auth/client/use-auth";
 
 function useLoginForm(): {
@@ -26,7 +25,7 @@ function useLoginForm(): {
 
   const onSubmit = useCallback(async () => {
     setIsLoading(true);
-    const response = await loginPostFetch({ email, password });
+    const response = await auth.loginPostFetch({ email, password });
     const data = (await response.json()) as { token: Token };
     const token = data.token;
     auth.setToken(token);
