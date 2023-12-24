@@ -62,4 +62,4 @@ jobs:
       - uses: EndBug/add-and-commit@v9
         with:
           message: "[GH ACTIONS CHORE] Add dependencies map"
-          add: "*-map.png"
+          add: "*-map.*"
