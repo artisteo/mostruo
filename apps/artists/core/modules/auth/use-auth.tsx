@@ -1,6 +1,6 @@
 import { hookstate, useHookstate } from "@hookstate/core";
 import { useCallback, useEffect, useMemo } from "react";
-import getAuthClientCookie from "./cookie/get-auth-client-cookie";
+import getAuthClientCookie from "./service/client/get-auth-client-cookie";
 import type TokenPublicDto from "./token/token-public-dto";
 import type Token from "./token/token";
 import loginPostFetch from "./login/endpoints/login-post-fetch";

@@ -1,4 +1,4 @@
-import deleteAuthCookie from "../../cookie/delete-auth-cookie";
+import deleteAuthCookie from "../../service/server/delete-auth-cookie";
 
 const logoutUseCase = (): void => {
   deleteAuthCookie();
