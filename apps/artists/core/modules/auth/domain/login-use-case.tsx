@@ -1,43 +1,46 @@
 import type { NextRequest } from "next/server";
-import { Ok, Err } from "oxide.ts";
-import type { Result } from "oxide.ts";
-import {
+import { Result } from "result-type-ts";
+import type { BadJSONFormatError ,
   BadCredentialsError,
-  BadDtoFormatError,
-  BadJSONFormatError,
-  InternalServerError,
+  BadDtoFormatError} from "../errors/errors";
+import {
+  InternalError,
 } from "../errors/errors";
 import LoginDto from "./login-dto";
 import Token from "./token";
 import setAuthCookie from "./set-auth-cookie";
 
-type LoginUseCaseResult = Result<
-  Token,
-  | typeof InternalServerError
-  | typeof BadCredentialsError
-  | typeof BadJSONFormatError
-  | typeof BadDtoFormatError
->;
-
 const loginUseCase = async (
   request: NextRequest
-): Promise<LoginUseCaseResult> => {
+): Promise<
+  Result<
+    Token,
+    | typeof InternalError
+    | typeof BadCredentialsError
+    | typeof BadJSONFormatError
+    | typeof BadDtoFormatError
+  >
+> => {
   try {
-    const loginDto = await LoginDto.createFromRequest(request);
-    const { password, email } = loginDto;
-    if (email !== "1" || password !== "1") {
-      return Err(BadCredentialsError);
+    //
+    const createResult = await LoginDto.createFromRequestResult(request);
+    if (createResult.isFailure) return createResult;
+    //
+    const loginDto = createResult.value;
+    const validateResult = LoginDto.validate(loginDto);
+    if (validateResult.isFailure) {
+      return validateResult;
     }
-    const token = await Token.createToken(email);
+    //
+    const verifyResult = LoginDto.verifyCredentials(loginDto);
+    if (verifyResult.isFailure) return verifyResult;
+    //
+    const token = await Token.createToken(loginDto.email);
     setAuthCookie(token);
-    return Ok(token);
+    //
+    return Result.success(token);
   } catch (e) {
-    const error = e as Error;
-    if (error.message === BadJSONFormatError) {
-      return Err(BadJSONFormatError);
-    }
-    if (error.message === BadDtoFormatError) return Err(BadDtoFormatError);
-    return Err(InternalServerError);
+    return Result.failure(InternalError);
   }
 };
 

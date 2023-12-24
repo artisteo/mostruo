@@ -4,4 +4,4 @@ export const BadJSONFormatError = "BadJSONFormatError";
 
 export const BadDtoFormatError = "BadDtoFormatError";
 
-export const InternalServerError = "InternalServerError";
+export const InternalError = "InternalError";

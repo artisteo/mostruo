@@ -1,16 +1,15 @@
-import { Ok, Err } from "oxide.ts";
-import type { Result } from "oxide.ts";
-import { InternalServerError } from "../errors/errors";
+import { Result } from "result-type-ts";
+import { InternalError } from "../errors/errors";
 import deleteAuthCookie from "./delete-auth-cookie";
 
-type LogoutUseCaseResult = Result<boolean, typeof InternalServerError>;
+type LogoutUseCaseResult = Result<boolean, typeof InternalError>;
 
 const logoutUseCase = (): LogoutUseCaseResult => {
   try {
     deleteAuthCookie();
-    return Ok(true);
+    return Result.success(true);
   } catch (e) {
-    return Err(InternalServerError);
+    return Result.failure(InternalError);
   }
 };
 

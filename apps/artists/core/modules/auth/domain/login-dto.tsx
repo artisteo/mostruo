@@ -1,6 +1,11 @@
 import jointz from "jointz";
 import type { NextRequest } from "next/server";
-import { BadDtoFormatError, BadJSONFormatError } from "../errors/errors";
+import {
+  BadCredentialsError,
+  BadDtoFormatError,
+  BadJSONFormatError,
+} from "../errors/errors";
+import { Result } from "result-type-ts";
 
 const LoginDtoValidator = jointz
   .object({
@@ -9,7 +14,9 @@ const LoginDtoValidator = jointz
   })
   .requiredKeys(["email", "password"]);
 
-const getJsonFromRequest = async (request: NextRequest): Promise<LoginDto> => {
+export const getJsonFromRequest = async (
+  request: NextRequest
+): Promise<LoginDto> => {
   try {
     const loginDto = (await request.json()) as LoginDto;
     return loginDto;
@@ -18,7 +25,7 @@ const getJsonFromRequest = async (request: NextRequest): Promise<LoginDto> => {
   }
 };
 
-const validateDTO = (loginDto: LoginDto): void => {
+export const validateDTO = (loginDto: LoginDto): void => {
   const errors = LoginDtoValidator.validate(loginDto);
   if (errors.length > 0) {
     throw new Error(BadDtoFormatError);
@@ -29,12 +36,34 @@ class LoginDto {
   public readonly email: string;
   public readonly password: string;
 
-  public static async createFromRequest(
+  public static async createFromRequestResult(
     request: NextRequest
-  ): Promise<LoginDto> {
-    const loginDto = await getJsonFromRequest(request);
-    validateDTO(loginDto);
-    return loginDto;
+  ): Promise<Result<LoginDto, typeof BadJSONFormatError>> {
+    try {
+      const loginDto = (await request.json()) as LoginDto;
+      return Result.success(loginDto);
+    } catch (e) {
+      return Result.failure(BadJSONFormatError);
+    }
+  }
+
+  public static validate(
+    loginDto: LoginDto
+  ): Result<boolean, typeof BadDtoFormatError> {
+    const errors = LoginDtoValidator.validate(loginDto);
+    if (errors.length > 0) {
+      return Result.failure(BadDtoFormatError);
+    }
+    return Result.success(true);
+  }
+
+  public static verifyCredentials(
+    loginDto: LoginDto
+  ): Result<boolean, typeof BadCredentialsError> {
+    if (loginDto.email !== "1" || loginDto.password !== "1") {
+      return Result.failure(BadCredentialsError);
+    }
+    return Result.success(true);
   }
 }
 

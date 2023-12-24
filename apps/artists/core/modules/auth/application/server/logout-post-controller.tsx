@@ -1,16 +1,12 @@
 import type { NextResponse } from "next/server";
-import { match } from "oxide.ts";
 import HttpResponse from "../http-response";
 import logoutUseCase from "../../domain/logout-use-case";
 
 const LogoutPostController = (): NextResponse => {
-  const result = logoutUseCase();
-  return match(result, {
-    Ok: () => HttpResponse.OK(),
-    Err: () => {
-      return HttpResponse.InternalServerError();
-    },
-  });
+  return logoutUseCase().match(
+    () => HttpResponse.OK(),
+    () => HttpResponse.InternalServerError()
+  );
 };
 
 export default LogoutPostController;
