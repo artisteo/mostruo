@@ -1,23 +1,19 @@
 # Mostruo
-
-## Diagrams
+# Diagrams
 
 Diagrams are generated on push with The Add Dependencies Map Github Action
 
-### Core mermaid diagram
+## Nice diagrams:
 
-Todo
+Mermaid diagrams can not be embbeded in Markdown like that so you have to click on the links
 
-![Core](core-map.mermaid)
+[Core diagram premium](core-map.mermaid)
 
-### Core dot + Graphviz diagram
+[Main diagram premium](main-map.mermaid)
 
-![Full](core-map.png)
+## Ok diagrams
+This are pgns so is ok
 
-### Full mermaid diagram
+![Core diagram standard](core-map.png)
 
-Todo
-
-### Full dot + Graphviz diagram
-
-![Full](main-map.png)
+![Main ok diagram standard](main-map.png)
