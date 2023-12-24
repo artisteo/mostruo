@@ -1,5 +1,9 @@
-import { deleteGenericServerCookie } from "../../../base/cookies/delete-generic-server-cookie";
+import { cookies } from "next/headers";
 import Token from "./token";
+
+export function deleteGenericServerCookie(name: string): void {
+  cookies().delete(name);
+}
 
 function deleteAuthCookie(): void {
   deleteGenericServerCookie(Token.AUTH_COOKIE_NAME);

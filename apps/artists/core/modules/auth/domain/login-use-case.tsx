@@ -2,10 +2,10 @@ import type { NextRequest } from "next/server";
 import { Result } from "result-type-ts";
 import type { BadJSONFormatError ,
   BadCredentialsError,
-  BadDtoFormatError} from "../../../base/errors";
+  BadDtoFormatError} from "./errors";
 import {
   InternalError,
-} from "../../../base/errors";
+} from "./errors";
 import LoginDto from "./login-dto";
 import Token from "./token";
 import setAuthCookie from "./set-auth-cookie";
