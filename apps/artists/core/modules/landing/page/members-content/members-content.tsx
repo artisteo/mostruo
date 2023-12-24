@@ -1,14 +1,13 @@
 "use client";
 import { useState } from "react";
-import logoutRequest from "../../../auth/logout/endpoints/logout-post-fetch";
 import useAuth from "../../../auth/client/use-auth";
 
 function MembersContent(): JSX.Element {
   const [isLoading, setIsLoading] = useState(false);
-  const { clearToken, tokenPublicDto } = useAuth();
+  const { clearToken, tokenPublicDto, logoutPostFetch } = useAuth();
   const onLogout = async (): Promise<void> => {
     setIsLoading(true);
-    const request = await logoutRequest();
+    const request = await logoutPostFetch();
     await request.json();
     clearToken();
     setIsLoading(false);

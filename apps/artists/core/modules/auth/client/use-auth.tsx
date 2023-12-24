@@ -4,6 +4,7 @@ import type Token from "../token/token";
 import type TokenPublicDto from "../token/token-public-dto";
 import type LoginDto from "../login/login-dto";
 import loginPostFetch from "../login/endpoints/login-post-fetch";
+import logoutPostFetch from "../logout/endpoints/logout-post-fetch";
 import getAuthClientCookie from "./get-auth-client-cookie";
 
 interface Auth {
@@ -25,10 +26,12 @@ const useAuth = (): {
   clearToken: () => void;
   tokenPublicDto: TokenPublicDto | null;
   loginPostFetch: (dto: LoginDto) => Promise<Response>;
+  logoutPostFetch: () => Promise<Response>;
 } => {
   const auth = useHookstate(authState);
 
   const loadClientAuthCookie = useCallback((): void => {
+    console.log("🔥 ~ loadClientAuthCookie:", loadClientAuthCookie);
     const clientCookie = getAuthClientCookie();
     auth.set({
       token: clientCookie,
@@ -72,6 +75,7 @@ const useAuth = (): {
       clearToken,
       tokenPublicDto,
       loginPostFetch,
+      logoutPostFetch,
     };
   }, [auth, clearToken, setToken]);
 
