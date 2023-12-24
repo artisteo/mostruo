@@ -1,5 +1,5 @@
 import type { NextRequest, NextResponse } from "next/server";
-import HttpResponse from "../../../../base/http-response";
+import HttpResponse from "./http-response";
 import loginUseCase from "../../domain/login-use-case";
 
 const LoginPostController = async (

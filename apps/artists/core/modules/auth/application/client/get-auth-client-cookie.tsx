@@ -1,5 +1,5 @@
-import { getGenericClientCookie } from "../../../../base/cookies/get-generic-client-cookie";
 import Token from "../../domain/token";
+import { getGenericClientCookie } from "./get-generic-client-cookie";
 
 function getAuthClientCookie(): Token | null {
   const cookie = getGenericClientCookie(Token.AUTH_COOKIE_NAME);
