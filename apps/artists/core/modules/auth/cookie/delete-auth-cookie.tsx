@@ -1,4 +1,4 @@
-import { deleteGenericServerCookie } from "../../_hex/cookies/delete-generic-server-cookie";
+import { deleteGenericServerCookie } from "../../../base/cookies/delete-generic-server-cookie";
 import AUTH_COOKIE_NAME from "./auth-cookie-name";
 
 function deleteAuthCookie(): void {
