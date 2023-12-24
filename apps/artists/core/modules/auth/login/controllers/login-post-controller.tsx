@@ -6,7 +6,7 @@ import {
   BadDtoFormatError,
   BadJSONFormatError,
 } from "../../../../base/errors";
-import loginUseCase from "./login-use-case";
+import loginUseCase from "../login-use-case";
 
 const LoginPostController = async (
   request: NextRequest

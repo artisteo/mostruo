@@ -1,5 +1,5 @@
-import LoginGetController from "../../../../core/modules/auth/login/endpoints/login-get-controller";
-import LoginPostController from "../../../../core/modules/auth/login/endpoints/login-post-controller";
+import LoginGetController from "../../../../core/modules/auth/login/controllers/login-get-controller";
+import LoginPostController from "../../../../core/modules/auth/login/controllers/login-post-controller";
 
 const GET = LoginGetController;
 const POST = LoginPostController;

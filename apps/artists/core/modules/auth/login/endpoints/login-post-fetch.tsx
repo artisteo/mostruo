@@ -1,4 +1,4 @@
-import type LoginDto from "./login-dto";
+import type LoginDto from "../login-dto";
 
 // frontend will call this
 // TODO we could inject token for auth calls
