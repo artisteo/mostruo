@@ -1,8 +1,8 @@
-name: Add depedencies map
+name: Add dependencies map
 on: [push]
 jobs:
   test:
-    name: Add depedencies map
+    name: Add dependencies map
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -36,5 +36,5 @@ jobs:
 
       - uses: EndBug/add-and-commit@v9
         with:
-            message: "[CHORE] Add depedencies map"
+            message: "[GH ACTIONS CHORE] Add dependencies map"
             add: "*-map.png"
