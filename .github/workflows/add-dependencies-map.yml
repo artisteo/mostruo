@@ -20,5 +20,5 @@ jobs:
         run: dot -Tpng dependencies.dot -o dependencies-map.png
       - uses: EndBug/add-and-commit@v9
         with:
-          message: "Add depedencies map"
+          message: "[CHORE] Add depedencies map"
           add: "dependencies-map.png"
