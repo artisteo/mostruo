@@ -14,9 +14,8 @@ end
 subgraph 7["domain"]
 8["token.tsx"]
 O["delete-auth-cookie.tsx"]
-P["errors.tsx"]
-Q["login-dto.tsx"]
-R["login-use-case.tsx"]
+P["login-dto.tsx"]
+Q["login-use-case.tsx"]
 S["set-auth-cookie.tsx"]
 T["logout-use-case.tsx"]
 U["token-public-dto.tsx"]
@@ -40,6 +39,7 @@ subgraph M["members-content"]
 N["members-content.tsx"]
 end
 end
+R["errors.tsx"]
 subgraph W["server"]
 X["http-response.tsx"]
 Y["login-get-controller.tsx"]
@@ -73,14 +73,14 @@ L-->E
 L-->N
 N-->B
 O-->8
-R-->P
-R-->S
-R-->8
+Q-->R
+Q-->S
+Q-->8
 S-->8
+T-->R
 T-->O
-T-->P
 Y-->X
-Z-->P
+Z-->Q
 Z-->R
 Z-->X
 10-->X
