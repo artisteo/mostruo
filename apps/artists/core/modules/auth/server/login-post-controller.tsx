@@ -4,7 +4,7 @@ import {
   BadCredentialsError,
   BadDtoFormatError,
   BadJSONFormatError,
-} from "../domain/errors";
+} from "../errors";
 import HttpResponse from "./http-response";
 
 const LoginPostController = async (

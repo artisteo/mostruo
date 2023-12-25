@@ -3,13 +3,13 @@ import type { Result } from "neverthrow";
 import { ResultAsync, errAsync, okAsync, Ok, Err } from "neverthrow";
 import { MongoClient, ServerApiVersion } from "mongodb";
 import jointz from "jointz";
-import type LoginDto from "./login-dto";
 import {
   BadCredentialsError,
   BadDtoFormatError,
   BadJSONFormatError,
   InternalError,
-} from "./errors";
+} from "../errors";
+import type LoginDto from "./login-dto";
 import Token from "./token";
 import setAuthCookie from "./set-auth-cookie";
 
