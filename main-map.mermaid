@@ -28,12 +28,12 @@ M["logout-post-controller.tsx"]
 end
 subgraph E["domain"]
 F["login-use-case.tsx"]
+G["errors.tsx"]
 H["set-auth-cookie.tsx"]
 I["token.tsx"]
 N["logout-use-case.tsx"]
 O["delete-auth-cookie.tsx"]
 end
-G["errors.tsx"]
 subgraph U["components"]
 subgraph V["auth-section"]
 W["auth-section.tsx"]
@@ -75,7 +75,6 @@ end
 6-->D
 B-->C
 D-->F
-D-->G
 D-->C
 F-->G
 F-->H
@@ -86,8 +85,8 @@ K-->M
 L-->C
 M-->N
 M-->C
-N-->G
 N-->O
+N-->G
 O-->I
 Q-->S
 S-->T
