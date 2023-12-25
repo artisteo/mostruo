@@ -20,6 +20,7 @@ R["login-use-case.tsx"]
 S["set-auth-cookie.tsx"]
 T["logout-use-case.tsx"]
 U["token-public-dto.tsx"]
+V["user.tsx"]
 end
 subgraph C["components"]
 subgraph D["anonymous-content"]
@@ -39,24 +40,24 @@ subgraph M["members-content"]
 N["members-content.tsx"]
 end
 end
-subgraph V["server"]
-W["http-response.tsx"]
-X["login-get-controller.tsx"]
-Y["login-post-controller.tsx"]
-Z["logout-get-controller.tsx"]
-10["logout-post-controller.tsx"]
+subgraph W["server"]
+X["http-response.tsx"]
+Y["login-get-controller.tsx"]
+Z["login-post-controller.tsx"]
+10["logout-get-controller.tsx"]
+11["logout-post-controller.tsx"]
 end
 end
-subgraph 11["environment"]
-12["environment-display.tsx"]
-13["use-environment.tsx"]
+subgraph 12["environment"]
+13["environment-display.tsx"]
+14["use-environment.tsx"]
 end
-subgraph 14["landing"]
-15["page.tsx"]
+subgraph 15["landing"]
+16["page.tsx"]
 end
 end
 end
-16["settings.tsx"]
+17["settings.tsx"]
 end
 end
 6-->8
@@ -72,21 +73,20 @@ L-->E
 L-->N
 N-->B
 O-->8
-Q-->P
 R-->P
-R-->Q
 R-->S
 R-->8
 S-->8
 T-->O
 T-->P
-X-->W
-Y-->R
-Y-->W
-Z-->W
-10-->T
-10-->W
-12-->13
-15-->16
-15-->L
-15-->12
+Y-->X
+Z-->P
+Z-->R
+Z-->X
+10-->X
+11-->T
+11-->X
+13-->14
+16-->17
+16-->L
+16-->13
