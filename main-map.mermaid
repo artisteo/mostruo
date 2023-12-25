@@ -8,13 +8,13 @@ subgraph 4["auth"]
 subgraph 5["login"]
 6["route.ts"]
 end
-subgraph K["logout"]
-L["route.ts"]
+subgraph J["logout"]
+K["route.ts"]
 end
 end
 end
-Q["layout.tsx"]
-R["page.tsx"]
+P["layout.tsx"]
+Q["page.tsx"]
 end
 subgraph 7["core"]
 subgraph 8["modules"]
@@ -23,88 +23,86 @@ subgraph A["server"]
 B["login-get-controller.tsx"]
 C["http-response.tsx"]
 D["login-post-controller.tsx"]
-M["logout-get-controller.tsx"]
-N["logout-post-controller.tsx"]
+L["logout-get-controller.tsx"]
+M["logout-post-controller.tsx"]
 end
 subgraph E["domain"]
-F["login-use-case.tsx"]
-G["errors.tsx"]
-H["login-dto.tsx"]
-I["set-auth-cookie.tsx"]
-J["token.tsx"]
-O["logout-use-case.tsx"]
-P["delete-auth-cookie.tsx"]
+F["errors.tsx"]
+G["login-use-case.tsx"]
+H["set-auth-cookie.tsx"]
+I["token.tsx"]
+N["logout-use-case.tsx"]
+O["delete-auth-cookie.tsx"]
 end
-subgraph V["components"]
-subgraph W["auth-section"]
-X["auth-section.tsx"]
+subgraph U["components"]
+subgraph V["auth-section"]
+W["auth-section.tsx"]
 end
-subgraph 13["anonymous-content"]
-14["anonymous-content.tsx"]
+subgraph 12["anonymous-content"]
+13["anonymous-content.tsx"]
 end
-subgraph 15["login-form"]
-16["login-form.tsx"]
-17["use-login-form.tsx"]
+subgraph 14["login-form"]
+15["login-form.tsx"]
+16["use-login-form.tsx"]
 end
-subgraph 18["register-form"]
-19["register-form.tsx"]
+subgraph 17["register-form"]
+18["register-form.tsx"]
 end
-subgraph 1A["members-content"]
-1B["members-content.tsx"]
-end
-end
-subgraph Y["client"]
-Z["use-auth.tsx"]
-10["get-auth-client-cookie.tsx"]
-11["login-post-fetch.tsx"]
-12["logout-post-fetch.tsx"]
+subgraph 19["members-content"]
+1A["members-content.tsx"]
 end
 end
-subgraph S["landing"]
-T["page.tsx"]
-end
-subgraph 1C["environment"]
-1D["environment-display.tsx"]
-1E["use-environment.tsx"]
-end
+subgraph X["client"]
+Y["use-auth.tsx"]
+Z["get-auth-client-cookie.tsx"]
+10["login-post-fetch.tsx"]
+11["logout-post-fetch.tsx"]
 end
 end
-U["settings.tsx"]
+subgraph R["landing"]
+S["page.tsx"]
+end
+subgraph 1B["environment"]
+1C["environment-display.tsx"]
+1D["use-environment.tsx"]
+end
+end
+end
+T["settings.tsx"]
 end
 end
 6-->B
 6-->D
 B-->C
 D-->F
+D-->G
 D-->C
-F-->G
-F-->H
-F-->I
-F-->J
-H-->G
-I-->J
-L-->M
-L-->N
+G-->F
+G-->H
+G-->I
+H-->I
+K-->L
+K-->M
+L-->C
+M-->N
 M-->C
 N-->O
-N-->C
-O-->P
-O-->G
-P-->J
-R-->T
-T-->U
-T-->X
-T-->1D
-X-->Z
-X-->14
-X-->1B
-Z-->10
-Z-->11
-Z-->12
-10-->J
-14-->16
-14-->19
-16-->17
-17-->Z
-1B-->Z
-1D-->1E
+N-->F
+O-->I
+Q-->S
+S-->T
+S-->W
+S-->1C
+W-->Y
+W-->13
+W-->1A
+Y-->Z
+Y-->10
+Y-->11
+Z-->I
+13-->15
+13-->18
+15-->16
+16-->Y
+1A-->Y
+1C-->1D
