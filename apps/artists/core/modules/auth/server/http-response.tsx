@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import type Token from "../domain/token";
 
 export default class HttpResponse<T> {
   static readonly STATUS_OK = 200;
@@ -14,6 +15,10 @@ export default class HttpResponse<T> {
     if (typeof this.payload === "undefined")
       return NextResponse.json({}, { status: this.status });
     return NextResponse.json(this.payload, { status: this.status });
+  }
+
+  public static OkPremium(payload: Token): NextResponse<Token> {
+    return NextResponse.json(payload, { status: 200 });
   }
 
   public static OK<T>(payload?: T): NextResponse {
@@ -34,16 +39,29 @@ export default class HttpResponse<T> {
       payload
     ).get();
   }
+  public static InternalServerErrorPremium(
+    payload: string
+  ): NextResponse<string> {
+    return NextResponse.json(payload, {
+      status: this.STATUS_INTERNAL_SERVER_ERROR,
+    });
+  }
   public static BadRequest<T>(payload?: T): NextResponse {
     return new HttpResponse<T | undefined>(
       this.STATUS_BAD_REQUEST,
       payload
     ).get();
   }
+  public static BadRequestPremium(payload: string): NextResponse<string> {
+    return NextResponse.json(payload, { status: this.STATUS_BAD_REQUEST });
+  }
   public static Unauthorized<T>(payload?: T): NextResponse {
     return new HttpResponse<T | undefined>(
       this.STATUS_UNAUTHORIZED,
       payload
     ).get();
+  }
+  public static UnauthorizedPremium(payload: string): NextResponse<string> {
+    return NextResponse.json(payload, { status: this.STATUS_UNAUTHORIZED });
   }
 }

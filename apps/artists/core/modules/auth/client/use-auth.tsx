@@ -54,11 +54,8 @@ const useAuth = (): {
   );
 
   const clearToken = useCallback(() => {
-    auth.set((currentState) => {
-      const newState = { ...currentState, token: null };
-      return newState;
-    });
-  }, [auth]);
+    loadClientAuthCookie();
+  }, [loadClientAuthCookie]);
 
   const useAuthValue = useMemo(() => {
     const currentAuth = auth.get();

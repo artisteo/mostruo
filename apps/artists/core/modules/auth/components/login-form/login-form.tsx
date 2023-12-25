@@ -11,6 +11,7 @@ function LoginForm(): JSX.Element {
     isLoading,
     canSubmit,
     onSubmit,
+    error,
   } = useLoginForm();
 
   return (
@@ -50,6 +51,11 @@ function LoginForm(): JSX.Element {
             {isLoading ? "..." : "Login"}
           </button>
         </div>
+        {error !== "" && (
+          <div>
+            <p>error: {error}</p>
+          </div>
+        )}
       </form>
     </div>
   );
