@@ -1,5 +1,5 @@
 import { cookies } from "next/headers";
-import Token from "./token";
+import Token from "../token";
 
 export function deleteGenericServerCookie(name: string): void {
   cookies().delete(name);
