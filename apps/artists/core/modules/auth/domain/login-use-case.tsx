@@ -8,7 +8,7 @@ import {
   BadDtoFormatError,
   BadJSONFormatError,
   InternalError,
-} from "../errors";
+} from "./errors";
 import type LoginDto from "./login-dto";
 import Token from "./token";
 import setAuthCookie from "./set-auth-cookie";
