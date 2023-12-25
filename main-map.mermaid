@@ -8,13 +8,13 @@ subgraph 4["auth"]
 subgraph 5["login"]
 6["route.ts"]
 end
-subgraph J["logout"]
-K["route.ts"]
+subgraph N["logout"]
+O["route.ts"]
 end
 end
 end
-P["layout.tsx"]
-Q["page.tsx"]
+T["layout.tsx"]
+U["page.tsx"]
 end
 subgraph 7["core"]
 subgraph 8["modules"]
@@ -23,52 +23,57 @@ subgraph A["server"]
 B["login-get-controller.tsx"]
 C["http-response.tsx"]
 D["login-post-controller.tsx"]
-L["logout-get-controller.tsx"]
-M["logout-post-controller.tsx"]
+P["logout-get-controller.tsx"]
+Q["logout-post-controller.tsx"]
 end
 subgraph E["domain"]
 F["login-use-case.tsx"]
 G["errors.tsx"]
-H["set-auth-cookie.tsx"]
-I["token.tsx"]
-N["logout-use-case.tsx"]
-O["delete-auth-cookie.tsx"]
+subgraph H["service"]
+I["get-from-json.tsx"]
+J["save-token.tsx"]
+L["validate-dto.tsx"]
+M["verify-credentials.tsx"]
+S["delete-auth-cookie.tsx"]
 end
-subgraph U["components"]
-subgraph V["auth-section"]
-W["auth-section.tsx"]
+K["token.tsx"]
+R["logout-use-case.tsx"]
 end
-subgraph 12["anonymous-content"]
-13["anonymous-content.tsx"]
+subgraph Y["components"]
+subgraph Z["auth-section"]
+10["auth-section.tsx"]
 end
-subgraph 14["login-form"]
-15["login-form.tsx"]
-16["use-login-form.tsx"]
+subgraph 16["anonymous-content"]
+17["anonymous-content.tsx"]
 end
-subgraph 17["register-form"]
-18["register-form.tsx"]
+subgraph 18["login-form"]
+19["login-form.tsx"]
+1A["use-login-form.tsx"]
 end
-subgraph 19["members-content"]
-1A["members-content.tsx"]
+subgraph 1B["register-form"]
+1C["register-form.tsx"]
 end
-end
-subgraph X["client"]
-Y["use-auth.tsx"]
-Z["get-auth-client-cookie.tsx"]
-10["login-post-fetch.tsx"]
-11["logout-post-fetch.tsx"]
+subgraph 1D["members-content"]
+1E["members-content.tsx"]
 end
 end
-subgraph R["landing"]
-S["page.tsx"]
-end
-subgraph 1B["environment"]
-1C["environment-display.tsx"]
-1D["use-environment.tsx"]
-end
+subgraph 11["client"]
+12["use-auth.tsx"]
+13["get-auth-client-cookie.tsx"]
+14["login-post-fetch.tsx"]
+15["logout-post-fetch.tsx"]
 end
 end
-T["settings.tsx"]
+subgraph V["landing"]
+W["page.tsx"]
+end
+subgraph 1F["environment"]
+1G["environment-display.tsx"]
+1H["use-environment.tsx"]
+end
+end
+end
+X["settings.tsx"]
 end
 end
 6-->B
@@ -77,31 +82,37 @@ B-->C
 D-->F
 D-->C
 F-->G
-F-->H
 F-->I
-H-->I
-K-->L
-K-->M
-L-->C
-M-->N
-M-->C
-N-->O
-N-->G
-O-->I
-Q-->S
-S-->T
-S-->W
-S-->1C
-W-->Y
-W-->13
-W-->1A
-Y-->Z
-Y-->10
-Y-->11
-Z-->I
-13-->15
-13-->18
-15-->16
-16-->Y
-1A-->Y
-1C-->1D
+F-->J
+F-->L
+F-->M
+I-->G
+J-->G
+J-->K
+L-->G
+M-->G
+O-->P
+O-->Q
+P-->C
+Q-->R
+Q-->C
+R-->G
+R-->S
+S-->K
+U-->W
+W-->X
+W-->10
+W-->1G
+10-->12
+10-->17
+10-->1E
+12-->13
+12-->14
+12-->15
+13-->K
+17-->19
+17-->1C
+19-->1A
+1A-->12
+1E-->12
+1G-->1H
