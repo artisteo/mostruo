@@ -13,7 +13,7 @@ B["use-auth.tsx"]
 end
 subgraph 7["domain"]
 8["token.tsx"]
-O["errors.tsx"]
+I["errors.tsx"]
 P["login-dto.tsx"]
 Q["login-use-case.tsx"]
 subgraph R["service"]
@@ -35,14 +35,14 @@ subgraph F["login-form"]
 G["login-form.tsx"]
 H["use-login-form.tsx"]
 end
-subgraph I["register-form"]
-J["register-form.tsx"]
+subgraph J["register-form"]
+K["register-form.tsx"]
 end
-subgraph K["auth-section"]
-L["auth-section.tsx"]
+subgraph L["auth-section"]
+M["auth-section.tsx"]
 end
-subgraph M["members-content"]
-N["members-content.tsx"]
+subgraph N["members-content"]
+O["members-content.tsx"]
 end
 end
 subgraph 10["server"]
@@ -70,24 +70,25 @@ B-->6
 B-->9
 B-->A
 E-->G
-E-->J
+E-->K
 G-->H
 H-->B
-L-->B
-L-->E
-L-->N
-N-->B
-Q-->O
+H-->I
+M-->B
+M-->E
+M-->O
+O-->B
+Q-->I
 Q-->S
 Q-->T
 Q-->U
 Q-->V
-S-->O
-T-->O
+S-->I
+T-->I
 T-->8
-U-->O
-V-->O
-W-->O
+U-->I
+V-->I
+W-->I
 W-->X
 X-->8
 12-->11
@@ -98,5 +99,5 @@ X-->8
 15-->11
 17-->18
 1A-->1B
-1A-->L
+1A-->M
 1A-->17
