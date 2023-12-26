@@ -6,12 +6,10 @@ import type BadDtoFormatError from "../errors/bad-dto-format-error";
 import type BadCredentialsError from "../errors/bad-credentials-error";
 import type InternalError from "../errors/internal-error";
 import ServerError from "../errors/server-error";
-import type LoginDto from "./login-dto";
 import type Token from "./token";
 import saveToken from "./auth-service/save-token";
-import getFromJSON from "./auth-service/get-from-json";
-import validateDTO from "./auth-service/validate-dto";
 import User from "./user";
+import LoginDto from "./login-dto";
 
 const loginUseCase = async (
   request: NextRequest
@@ -26,12 +24,13 @@ const loginUseCase = async (
   >
 > => {
   try {
-    const result = getFromJSON(request).andThen((loginDto: LoginDto) =>
-      validateDTO(loginDto).asyncAndThen(() =>
-        User.findOneByLoginDtoResult(loginDto).andThen(() =>
-          saveToken(loginDto).andThen((token) => okAsync(token))
+    const result = LoginDto.getFromRequest(request).andThen(
+      (loginDto: LoginDto) =>
+        LoginDto.validate(loginDto).asyncAndThen(() =>
+          User.findOneByLoginDtoResult(loginDto).andThen(() =>
+            saveToken(loginDto).andThen((token) => okAsync(token))
+          )
         )
-      )
     );
     return result;
   } catch (e) {
