@@ -45,37 +45,40 @@ subgraph Z["components"]
 subgraph 10["auth-section"]
 11["auth-section.tsx"]
 end
-subgraph 17["anonymous-content"]
-18["anonymous-content.tsx"]
+subgraph 19["anonymous-content"]
+1A["anonymous-content.tsx"]
 end
-subgraph 19["login-form"]
-1A["login-form.tsx"]
-1B["use-login-form.tsx"]
+subgraph 1B["login-form"]
+1C["login-form.tsx"]
+1D["use-login-form.tsx"]
 end
-subgraph 1C["register-form"]
-1D["register-form.tsx"]
+subgraph 1E["register-form"]
+1F["register-form.tsx"]
 end
-subgraph 1E["members-content"]
-1F["members-content.tsx"]
+subgraph 1G["members-content"]
+1H["members-content.tsx"]
 end
 end
 subgraph 12["client"]
 13["use-auth.tsx"]
-14["get-auth-client-cookie.tsx"]
-15["login-post-fetch-result.tsx"]
-16["logout-post-fetch.tsx"]
+16["get-auth-client-cookie.tsx"]
+17["login-post-fetch-result.tsx"]
+18["logout-post-fetch.tsx"]
 end
 end
 subgraph W["landing"]
 X["page.tsx"]
 end
-subgraph 1G["environment"]
-1H["environment-display.tsx"]
-1I["use-environment.tsx"]
+subgraph 1I["environment"]
+1J["environment-display.tsx"]
+1K["use-environment.tsx"]
 end
 end
 end
 Y["settings.tsx"]
+subgraph 14["utils"]
+15["use-effect-once.tsx"]
+end
 end
 end
 6-->C
@@ -104,19 +107,20 @@ T-->L
 V-->X
 X-->Y
 X-->11
-X-->1H
+X-->1J
 11-->13
-11-->18
-11-->1F
-13-->14
+11-->1A
+11-->1H
 13-->15
 13-->16
-14-->L
-15-->H
-15-->L
-18-->1A
-18-->1D
-1A-->1B
-1B-->13
-1F-->13
-1H-->1I
+13-->17
+13-->18
+16-->L
+17-->H
+17-->L
+1A-->1C
+1A-->1F
+1C-->1D
+1D-->13
+1H-->13
+1J-->1K

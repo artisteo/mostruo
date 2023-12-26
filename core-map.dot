@@ -10,6 +10,7 @@ strict digraph "dependency-cruiser output"{
     "apps/artists/core/modules/auth/client/login-post-fetch-result.tsx" -> "apps/artists/core/modules/auth/domain/token.tsx"
     subgraph "cluster_apps" {label="apps" subgraph "cluster_apps/artists" {label="artists" subgraph "cluster_apps/artists/core" {label="core" subgraph "cluster_apps/artists/core/modules" {label="modules" subgraph "cluster_apps/artists/core/modules/auth" {label="auth" subgraph "cluster_apps/artists/core/modules/auth/client" {label="client" "apps/artists/core/modules/auth/client/logout-post-fetch.tsx" [label=<logout-post-fetch.tsx> tooltip="logout-post-fetch.tsx" URL="apps/artists/core/modules/auth/client/logout-post-fetch.tsx" fillcolor="#bbfeff"] } } } } } }
     subgraph "cluster_apps" {label="apps" subgraph "cluster_apps/artists" {label="artists" subgraph "cluster_apps/artists/core" {label="core" subgraph "cluster_apps/artists/core/modules" {label="modules" subgraph "cluster_apps/artists/core/modules/auth" {label="auth" subgraph "cluster_apps/artists/core/modules/auth/client" {label="client" "apps/artists/core/modules/auth/client/use-auth.tsx" [label=<use-auth.tsx> tooltip="use-auth.tsx" URL="apps/artists/core/modules/auth/client/use-auth.tsx" fillcolor="#bbfeff"] } } } } } }
+    "apps/artists/core/modules/auth/client/use-auth.tsx" -> "apps/artists/utils/use-effect-once.tsx"
     "apps/artists/core/modules/auth/client/use-auth.tsx" -> "apps/artists/core/modules/auth/client/get-auth-client-cookie.tsx"
     "apps/artists/core/modules/auth/client/use-auth.tsx" -> "apps/artists/core/modules/auth/client/login-post-fetch-result.tsx"
     "apps/artists/core/modules/auth/client/use-auth.tsx" -> "apps/artists/core/modules/auth/client/logout-post-fetch.tsx"
@@ -71,4 +72,5 @@ strict digraph "dependency-cruiser output"{
     "apps/artists/core/modules/landing/page.tsx" -> "apps/artists/core/modules/auth/components/auth-section/auth-section.tsx"
     "apps/artists/core/modules/landing/page.tsx" -> "apps/artists/core/modules/environment/environment-display.tsx"
     subgraph "cluster_apps" {label="apps" subgraph "cluster_apps/artists" {label="artists" "apps/artists/settings.tsx" [label=<settings.tsx> tooltip="settings.tsx" URL="apps/artists/settings.tsx" fillcolor="#bbfeff"] } }
+    subgraph "cluster_apps" {label="apps" subgraph "cluster_apps/artists" {label="artists" subgraph "cluster_apps/artists/utils" {label="utils" "apps/artists/utils/use-effect-once.tsx" [label=<use-effect-once.tsx> tooltip="use-effect-once.tsx" URL="apps/artists/utils/use-effect-once.tsx" fillcolor="#bbfeff"] } } }
 }

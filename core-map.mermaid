@@ -14,93 +14,97 @@ end
 subgraph 7["domain"]
 8["token.tsx"]
 A["errors.tsx"]
-P["login-dto.tsx"]
-Q["login-use-case.tsx"]
-subgraph R["service"]
-S["get-from-json.tsx"]
-T["save-token.tsx"]
-U["validate-dto.tsx"]
-V["verify-credentials.tsx"]
-X["delete-auth-cookie.tsx"]
+R["login-dto.tsx"]
+S["login-use-case.tsx"]
+subgraph T["service"]
+U["get-from-json.tsx"]
+V["save-token.tsx"]
+W["validate-dto.tsx"]
+X["verify-credentials.tsx"]
+Z["delete-auth-cookie.tsx"]
 end
-W["logout-use-case.tsx"]
-Y["token-public-dto.tsx"]
-Z["user.tsx"]
+Y["logout-use-case.tsx"]
+10["token-public-dto.tsx"]
+11["user.tsx"]
 end
-subgraph D["components"]
-subgraph E["anonymous-content"]
-F["anonymous-content.tsx"]
+subgraph F["components"]
+subgraph G["anonymous-content"]
+H["anonymous-content.tsx"]
 end
-subgraph G["login-form"]
-H["login-form.tsx"]
-I["use-login-form.tsx"]
+subgraph I["login-form"]
+J["login-form.tsx"]
+K["use-login-form.tsx"]
 end
-subgraph J["register-form"]
-K["register-form.tsx"]
+subgraph L["register-form"]
+M["register-form.tsx"]
 end
-subgraph L["auth-section"]
-M["auth-section.tsx"]
+subgraph N["auth-section"]
+O["auth-section.tsx"]
 end
-subgraph N["members-content"]
-O["members-content.tsx"]
-end
-end
-subgraph 10["server"]
-subgraph 11["controllers"]
-12["login-get-controller.tsx"]
-14["login-post-controller.tsx"]
-15["logout-get-controller.tsx"]
-16["logout-post-controller.tsx"]
-end
-13["http-response.tsx"]
+subgraph P["members-content"]
+Q["members-content.tsx"]
 end
 end
-subgraph 17["environment"]
-18["environment-display.tsx"]
-19["use-environment.tsx"]
+subgraph 12["server"]
+subgraph 13["controllers"]
+14["login-get-controller.tsx"]
+16["login-post-controller.tsx"]
+17["logout-get-controller.tsx"]
+18["logout-post-controller.tsx"]
 end
-subgraph 1A["landing"]
-1B["page.tsx"]
+15["http-response.tsx"]
+end
+end
+subgraph 19["environment"]
+1A["environment-display.tsx"]
+1B["use-environment.tsx"]
+end
+subgraph 1C["landing"]
+1D["page.tsx"]
 end
 end
 end
-1C["settings.tsx"]
+subgraph D["utils"]
+E["use-effect-once.tsx"]
+end
+1E["settings.tsx"]
 end
 end
 6-->8
 9-->A
 9-->8
+C-->E
 C-->6
 C-->9
 C-->B
-F-->H
-F-->K
-H-->I
-I-->C
-M-->C
-M-->F
-M-->O
+H-->J
+H-->M
+J-->K
+K-->C
 O-->C
-Q-->A
-Q-->S
-Q-->T
-Q-->U
-Q-->V
+O-->H
+O-->Q
+Q-->C
 S-->A
-T-->A
-T-->8
+S-->U
+S-->V
+S-->W
+S-->X
 U-->A
 V-->A
+V-->8
 W-->A
-W-->X
-X-->8
-12-->13
-14-->Q
-14-->13
-15-->13
-16-->W
-16-->13
-18-->19
-1B-->1C
-1B-->M
-1B-->18
+X-->A
+Y-->A
+Y-->Z
+Z-->8
+14-->15
+16-->S
+16-->15
+17-->15
+18-->Y
+18-->15
+1A-->1B
+1D-->1E
+1D-->O
+1D-->1A
