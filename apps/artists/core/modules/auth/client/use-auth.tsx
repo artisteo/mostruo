@@ -6,7 +6,7 @@ import type TokenPublicDto from "../domain/token-public-dto";
 import type LoginDto from "../domain/login-dto";
 import loginPostFetchResult from "../server/login/login-post-fetch-result";
 import logoutPostFetch from "../server/logout/logout-post-fetch";
-import getAuthClientCookie from "../domain/service/get-auth-client-cookie";
+import getAuthClientCookie from "../domain/auth-service/get-auth-client-cookie";
 import { useEffectOnce } from "./use-effect-once";
 
 interface Auth {

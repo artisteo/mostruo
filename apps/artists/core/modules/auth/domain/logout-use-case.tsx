@@ -1,7 +1,7 @@
 import type { Result } from "neverthrow";
 import { Err, Ok } from "neverthrow";
 import ServerError from "../errors/server-error";
-import deleteAuthCookie from "./service/delete-auth-cookie";
+import deleteAuthCookie from "./auth-service/delete-auth-cookie";
 
 type LogoutUseCaseResult = Result<boolean, typeof ServerError>;
 

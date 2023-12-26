@@ -8,10 +8,10 @@ import type InternalError from "../errors/internal-error";
 import ServerError from "../errors/server-error";
 import type LoginDto from "./login-dto";
 import type Token from "./token";
-import saveToken from "./service/save-token";
-import verifyCredentials from "./service/verify-credentials";
-import getFromJSON from "./service/get-from-json";
-import validateDTO from "./service/validate-dto";
+import saveToken from "./auth-service/save-token";
+import getFromJSON from "./auth-service/get-from-json";
+import validateDTO from "./auth-service/validate-dto";
+import User from "./user";
 
 const loginUseCase = async (
   request: NextRequest
@@ -28,7 +28,7 @@ const loginUseCase = async (
   try {
     const result = getFromJSON(request).andThen((loginDto: LoginDto) =>
       validateDTO(loginDto).asyncAndThen(() =>
-        verifyCredentials(loginDto).andThen(() =>
+        User.findOneByLoginDtoResult(loginDto).andThen(() =>
           saveToken(loginDto).andThen((token) => okAsync(token))
         )
       )
