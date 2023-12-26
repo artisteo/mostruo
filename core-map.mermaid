@@ -31,54 +31,52 @@ subgraph D["domain"]
 subgraph E["auth-service"]
 F["get-auth-client-cookie.tsx"]
 V["delete-auth-cookie.tsx"]
-W["get-from-json.tsx"]
-Y["save-token.tsx"]
-10["validate-dto.tsx"]
+W["save-token.tsx"]
 end
 G["token.tsx"]
-12["login-dto.tsx"]
-13["login-use-case.tsx"]
-15["user.tsx"]
-17["logout-use-case.tsx"]
-18["token-public-dto.tsx"]
+Y["login-dto.tsx"]
+11["login-use-case.tsx"]
+13["user.tsx"]
+15["logout-use-case.tsx"]
+16["token-public-dto.tsx"]
 end
 subgraph H["server"]
 subgraph I["login"]
 J["login-post-fetch-result.tsx"]
-subgraph 1B["controllers"]
-1C["login-get-controller.tsx"]
-1D["login-post-controller.tsx"]
+subgraph 19["controllers"]
+1A["login-get-controller.tsx"]
+1B["login-post-controller.tsx"]
 end
 end
 subgraph M["logout"]
 N["logout-post-fetch.tsx"]
-subgraph 1E["controllers"]
-1F["logout-get-controller.tsx"]
-1G["logout-post-controller.tsx"]
+subgraph 1C["controllers"]
+1D["logout-get-controller.tsx"]
+1E["logout-post-controller.tsx"]
 end
 end
-1A["http-response.tsx"]
+18["http-response.tsx"]
 end
 subgraph K["errors"]
 L["fetch-error.tsx"]
-X["bad-json-format-error.tsx"]
-Z["internal-error.tsx"]
-11["bad-dto-format-error.tsx"]
-14["server-error.tsx"]
-16["bad-credentials-error.tsx"]
-19["not-found-error.tsx"]
+X["internal-error.tsx"]
+Z["bad-dto-format-error.tsx"]
+10["bad-json-format-error.tsx"]
+12["server-error.tsx"]
+14["bad-credentials-error.tsx"]
+17["not-found-error.tsx"]
 end
 end
-subgraph 1H["environment"]
-1I["environment-display.tsx"]
-1J["use-environment.tsx"]
+subgraph 1F["environment"]
+1G["environment-display.tsx"]
+1H["use-environment.tsx"]
 end
-subgraph 1K["landing"]
-1L["page.tsx"]
+subgraph 1I["landing"]
+1J["page.tsx"]
 end
 end
 end
-1M["settings.tsx"]
+1K["settings.tsx"]
 end
 end
 8-->A
@@ -98,24 +96,23 @@ S-->U
 U-->C
 V-->G
 W-->X
+W-->G
 Y-->Z
-Y-->G
-10-->11
+Y-->10
+11-->12
+11-->W
+11-->Y
+11-->13
 13-->14
-13-->W
-13-->Y
-13-->10
-13-->15
-15-->16
-17-->14
-17-->V
-1C-->1A
-1D-->13
-1D-->1A
-1F-->1A
-1G-->17
-1G-->1A
-1I-->1J
-1L-->1M
-1L-->S
-1L-->1I
+15-->12
+15-->V
+1A-->18
+1B-->11
+1B-->18
+1D-->18
+1E-->15
+1E-->18
+1G-->1H
+1J-->1K
+1J-->S
+1J-->1G
