@@ -1,8 +1,8 @@
-import { Result, ResultAsync } from "neverthrow";
-import { Err, Ok } from "neverthrow";
+import type { Result} from "neverthrow";
+import { ResultAsync , Err, Ok } from "neverthrow";
 import jointz from "jointz";
+import type { NextRequest } from "next/server";
 import BadDtoFormatError from "../errors/bad-dto-format-error";
-import { NextRequest } from "next/server";
 import BadJSONFormatError from "../errors/bad-json-format-error";
 
 const LoginDtoValidator = jointz

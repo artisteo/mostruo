@@ -1,8 +1,8 @@
 import { ResultAsync } from "neverthrow";
 import { cookies } from "next/headers";
-import type LoginDto from "../login-dto";
 import Token from "../token";
 import InternalError from "../../errors/internal-error";
+import type LoginDto from "../login-dto";
 
 const setGenericServerCookie = (name: string, value: string): void => {
   cookies().set(name, value);
