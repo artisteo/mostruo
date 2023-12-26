@@ -28,6 +28,7 @@ const useAuth = (): {
   clearToken: () => void;
   tokenPublicDto: TokenPublicDto | null;
   loginPostFetchResult: (dto: LoginDto) => Promise<Result<Token, string>>;
+  logoutPostFetch: () => Promise<Response>;
 } => {
   const auth = useHookstate(authState);
 
