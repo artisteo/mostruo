@@ -13,25 +13,25 @@ D["use-auth.tsx"]
 end
 subgraph 7["domain"]
 8["token.tsx"]
+S["login-dto.tsx"]
+T["login-use-case.tsx"]
+subgraph U["service"]
+V["get-from-json.tsx"]
+X["save-token.tsx"]
+Y["validate-dto.tsx"]
+10["verify-credentials.tsx"]
+13["delete-auth-cookie.tsx"]
+end
+12["logout-use-case.tsx"]
+14["token-public-dto.tsx"]
+15["user.tsx"]
+end
 subgraph A["errors"]
 B["internal-error.tsx"]
-S["bad-credentials-error.tsx"]
-T["bad-dto-format-error.tsx"]
-U["bad-json-format-error.tsx"]
-V["not-found-error.tsx"]
-end
-W["login-dto.tsx"]
-X["login-use-case.tsx"]
-subgraph Y["service"]
-Z["get-from-json.tsx"]
-10["save-token.tsx"]
-11["validate-dto.tsx"]
-12["verify-credentials.tsx"]
-14["delete-auth-cookie.tsx"]
-end
-13["logout-use-case.tsx"]
-15["token-public-dto.tsx"]
-16["user.tsx"]
+W["bad-json-format-error.tsx"]
+Z["bad-dto-format-error.tsx"]
+11["bad-credentials-error.tsx"]
+16["not-found-error.tsx"]
 end
 subgraph G["components"]
 subgraph H["anonymous-content"]
@@ -77,8 +77,8 @@ end
 end
 end
 6-->8
-9-->B
 9-->8
+9-->B
 D-->F
 D-->6
 D-->9
@@ -91,24 +91,24 @@ P-->D
 P-->I
 P-->R
 R-->D
+T-->B
+T-->V
+T-->X
+T-->Y
+T-->10
+V-->W
 X-->B
-X-->Z
-X-->10
-X-->11
-X-->12
-Z-->U
-10-->B
-10-->8
-11-->T
-12-->S
-13-->B
-13-->14
-14-->8
+X-->8
+Y-->Z
+10-->11
+12-->B
+12-->13
+13-->8
 19-->1A
-1B-->X
+1B-->T
 1B-->1A
 1C-->1A
-1D-->13
+1D-->12
 1D-->1A
 1F-->1G
 1I-->1J
