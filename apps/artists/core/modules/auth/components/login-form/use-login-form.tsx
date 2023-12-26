@@ -2,8 +2,6 @@
 import type { Dispatch, SetStateAction } from "react";
 import { useCallback, useMemo, useState } from "react";
 import useAuth from "../../client/use-auth";
-import { BadCredentialsError } from "../../domain/errors";
-import type { LoginPostControllerResponse } from "../../server/login-post-controller";
 
 function useLoginForm(): {
   email: string;
@@ -30,16 +28,11 @@ function useLoginForm(): {
     setError("");
     setIsLoading(true);
     try {
-      const response = await auth.loginPostFetch({ email, password });
-      const typedResponse = response as LoginPostControllerResponse;
-      if (typedResponse.status === 200) {
+      const response = await auth.loginPostFetchResult({ email, password });
+      if (response.isOk()) {
         auth.clearToken();
       } else {
-        const responseError = (await typedResponse.json()) as string;
-        if (responseError === BadCredentialsError) {
-          setError(`(detected): ${BadCredentialsError}`);
-        }
-        setError(`(passively detected): ${responseError}`);
+        setError(response.error);
       }
     } catch (e) {
       setError("FetchError");

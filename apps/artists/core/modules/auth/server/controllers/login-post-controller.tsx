@@ -1,7 +1,7 @@
 import type { NextRequest, NextResponse } from "next/server";
-import loginUseCase from "../domain/login-use-case";
-import type Token from "../domain/token";
-import HttpResponse from "./http-response";
+import loginUseCase from "../../domain/login-use-case";
+import type Token from "../../domain/token";
+import HttpResponse from "../http-response";
 
 export type LoginPostControllerResponse =
   | NextResponse<Token>
