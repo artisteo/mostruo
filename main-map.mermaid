@@ -38,15 +38,15 @@ end
 end
 subgraph G["domain"]
 H["login-use-case.tsx"]
-subgraph K["service"]
+subgraph K["auth-service"]
 L["get-from-json.tsx"]
 N["save-token.tsx"]
 Q["validate-dto.tsx"]
-S["verify-credentials.tsx"]
 11["delete-auth-cookie.tsx"]
 1C["get-auth-client-cookie.tsx"]
 end
 P["token.tsx"]
+S["user.tsx"]
 10["logout-use-case.tsx"]
 end
 subgraph I["errors"]
