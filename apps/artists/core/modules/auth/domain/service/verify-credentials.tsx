@@ -1,7 +1,7 @@
 import { ResultAsync } from "neverthrow";
 import { MongoClient, ServerApiVersion } from "mongodb";
 import type LoginDto from "../login-dto";
-import BadCredentialsError from "../errors/bad-credentials-error";
+import BadCredentialsError from "../../errors/bad-credentials-error";
 
 const uri =
   "mongodb+srv://hiartisteo:GvXlroaJ2ymRdKCd@database-cluster.kn4clcy.mongodb.net/?retryWrites=true&w=majority";

@@ -7,10 +7,10 @@ import saveToken from "./service/save-token";
 import verifyCredentials from "./service/verify-credentials";
 import getFromJSON from "./service/get-from-json";
 import validateDTO from "./service/validate-dto";
-import type BadJSONFormatError from "./errors/bad-json-format-error";
-import type BadDtoFormatError from "./errors/bad-dto-format-error";
-import type BadCredentialsError from "./errors/bad-credentials-error";
-import InternalError from "./errors/internal-error";
+import type BadJSONFormatError from "../errors/bad-json-format-error";
+import type BadDtoFormatError from "../errors/bad-dto-format-error";
+import type BadCredentialsError from "../errors/bad-credentials-error";
+import InternalError from "../errors/internal-error";
 
 const loginUseCase = async (
   request: NextRequest
