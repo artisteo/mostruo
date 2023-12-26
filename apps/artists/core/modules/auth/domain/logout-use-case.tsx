@@ -1,4 +1,5 @@
-import { Result } from "result-type-ts";
+import type { Result } from "neverthrow";
+import { Err, Ok } from "neverthrow";
 import ServerError from "../errors/server-error";
 import deleteAuthCookie from "./service/delete-auth-cookie";
 
@@ -7,9 +8,9 @@ type LogoutUseCaseResult = Result<boolean, typeof ServerError>;
 const logoutUseCase = (): LogoutUseCaseResult => {
   try {
     deleteAuthCookie();
-    return Result.success(true);
+    return new Ok(true);
   } catch (e) {
-    return Result.failure(ServerError);
+    return new Err(ServerError);
   }
 };
 
