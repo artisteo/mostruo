@@ -1,5 +1,5 @@
 "use client";
-import useAuth from "../../client/use-auth";
+import useAuth from "../../use-auth";
 import AnonymousContent from "../anonymous-content/anonymous-content";
 import MembersContent from "../members-content/members-content";
 

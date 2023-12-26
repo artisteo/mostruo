@@ -1,5 +1,5 @@
 import SETTINGS from "../../../settings";
-import AuthSection from "../auth/components/auth-section/auth-section";
+import AuthSection from "../auth/client/components/auth-section/auth-section";
 import EnvironmentDisplay from "../environment/environment-display";
 
 function LandingPage(): JSX.Element {
