@@ -6,111 +6,117 @@ subgraph 2["core"]
 subgraph 3["modules"]
 subgraph 4["auth"]
 subgraph 5["client"]
-6["get-auth-client-cookie.tsx"]
-9["login-post-fetch-result.tsx"]
-C["logout-post-fetch.tsx"]
-D["use-auth.tsx"]
+6["use-auth.tsx"]
 end
-subgraph 7["domain"]
-8["token.tsx"]
-S["login-dto.tsx"]
-T["login-use-case.tsx"]
-subgraph U["service"]
-V["get-from-json.tsx"]
-X["save-token.tsx"]
-Y["validate-dto.tsx"]
-10["verify-credentials.tsx"]
-13["delete-auth-cookie.tsx"]
+subgraph 9["domain"]
+subgraph A["service"]
+B["get-auth-client-cookie.tsx"]
+Y["get-from-json.tsx"]
+10["save-token.tsx"]
+11["validate-dto.tsx"]
+13["verify-credentials.tsx"]
+16["delete-auth-cookie.tsx"]
 end
-12["logout-use-case.tsx"]
-14["token-public-dto.tsx"]
-15["user.tsx"]
+C["token.tsx"]
+W["login-dto.tsx"]
+X["login-use-case.tsx"]
+15["logout-use-case.tsx"]
+17["token-public-dto.tsx"]
+18["user.tsx"]
 end
-subgraph A["errors"]
-B["internal-error.tsx"]
-W["bad-json-format-error.tsx"]
-Z["bad-dto-format-error.tsx"]
-11["bad-credentials-error.tsx"]
-16["not-found-error.tsx"]
-end
-subgraph G["components"]
-subgraph H["anonymous-content"]
-I["anonymous-content.tsx"]
-end
-subgraph J["login-form"]
-K["login-form.tsx"]
-L["use-login-form.tsx"]
-end
-subgraph M["register-form"]
-N["register-form.tsx"]
-end
-subgraph O["auth-section"]
-P["auth-section.tsx"]
-end
-subgraph Q["members-content"]
-R["members-content.tsx"]
+subgraph D["server"]
+subgraph E["login"]
+F["login-post-fetch-result.tsx"]
+subgraph 1B["controllers"]
+1C["login-get-controller.tsx"]
+1D["login-post-controller.tsx"]
 end
 end
-subgraph 17["server"]
-subgraph 18["controllers"]
-19["login-get-controller.tsx"]
-1B["login-post-controller.tsx"]
-1C["logout-get-controller.tsx"]
-1D["logout-post-controller.tsx"]
+subgraph I["logout"]
+J["logout-post-fetch.tsx"]
+subgraph 1E["controllers"]
+1F["logout-get-controller.tsx"]
+1G["logout-post-controller.tsx"]
+end
 end
 1A["http-response.tsx"]
 end
+subgraph G["errors"]
+H["internal-error.tsx"]
+Z["bad-json-format-error.tsx"]
+12["bad-dto-format-error.tsx"]
+14["bad-credentials-error.tsx"]
+19["not-found-error.tsx"]
 end
-subgraph 1E["environment"]
-1F["environment-display.tsx"]
-1G["use-environment.tsx"]
+subgraph K["components"]
+subgraph L["anonymous-content"]
+M["anonymous-content.tsx"]
 end
-subgraph 1H["landing"]
-1I["page.tsx"]
+subgraph N["login-form"]
+O["login-form.tsx"]
+P["use-login-form.tsx"]
+end
+subgraph Q["register-form"]
+R["register-form.tsx"]
+end
+subgraph S["auth-section"]
+T["auth-section.tsx"]
+end
+subgraph U["members-content"]
+V["members-content.tsx"]
 end
 end
 end
-subgraph E["utils"]
-F["use-effect-once.tsx"]
+subgraph 1H["environment"]
+1I["environment-display.tsx"]
+1J["use-environment.tsx"]
 end
-1J["settings.tsx"]
+subgraph 1K["landing"]
+1L["page.tsx"]
+end
+end
+end
+subgraph 7["utils"]
+8["use-effect-once.tsx"]
+end
+1M["settings.tsx"]
 end
 end
 6-->8
-9-->8
-9-->B
-D-->F
-D-->6
-D-->9
-D-->C
-I-->K
-I-->N
-K-->L
-L-->D
-P-->D
-P-->I
-P-->R
-R-->D
-T-->B
+6-->B
+6-->F
+6-->J
+B-->C
+F-->C
+F-->H
+M-->O
+M-->R
+O-->P
+P-->6
+T-->6
+T-->M
 T-->V
-T-->X
-T-->Y
-T-->10
-V-->W
-X-->B
-X-->8
+V-->6
+X-->H
+X-->Y
+X-->10
+X-->11
+X-->13
 Y-->Z
-10-->11
-12-->B
-12-->13
-13-->8
-19-->1A
-1B-->T
-1B-->1A
+10-->H
+10-->C
+11-->12
+13-->14
+15-->H
+15-->16
+16-->C
 1C-->1A
-1D-->12
+1D-->X
 1D-->1A
-1F-->1G
+1F-->1A
+1G-->15
+1G-->1A
 1I-->1J
-1I-->P
-1I-->1F
+1L-->1M
+1L-->T
+1L-->1I
