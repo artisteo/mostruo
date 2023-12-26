@@ -4,9 +4,9 @@
 import type { Result } from "neverthrow";
 import { Err, Ok } from "neverthrow";
 import type LoginDto from "../../domain/login-dto";
-import type { LoginPostControllerResponse } from "./controllers/login-post-controller";
 import Token from "../../domain/token";
-import InternalError from "../../errors/internal-error";
+import FetchError from "../../errors/fetch-error";
+import type { LoginPostControllerResponse } from "./controllers/login-post-controller";
 
 const loginPostFetchResult = async (
   dto: LoginDto
@@ -25,7 +25,7 @@ const loginPostFetchResult = async (
     const responseError = (await typedResponse.json()) as string;
     return new Err(responseError);
   } catch (e) {
-    return new Err(InternalError);
+    return new Err(FetchError);
   }
 };
 
