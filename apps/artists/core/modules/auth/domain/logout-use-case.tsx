@@ -1,6 +1,6 @@
 import { Result } from "result-type-ts";
-import { InternalError } from "./errors";
 import deleteAuthCookie from "./service/delete-auth-cookie";
+import InternalError from "./errors/internal-error";
 
 type LogoutUseCaseResult = Result<boolean, typeof InternalError>;
 

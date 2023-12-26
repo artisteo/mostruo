@@ -1,18 +1,16 @@
 import type { NextRequest } from "next/server";
 import type { Result } from "neverthrow";
 import { errAsync, okAsync } from "neverthrow";
-import type {
-  BadCredentialsError,
-  BadJSONFormatError,
-  BadDtoFormatError,
-} from "./errors";
-import { InternalError } from "./errors";
 import type LoginDto from "./login-dto";
 import type Token from "./token";
 import saveToken from "./service/save-token";
 import verifyCredentials from "./service/verify-credentials";
 import getFromJSON from "./service/get-from-json";
 import validateDTO from "./service/validate-dto";
+import type BadJSONFormatError from "./errors/bad-json-format-error";
+import type BadDtoFormatError from "./errors/bad-dto-format-error";
+import type BadCredentialsError from "./errors/bad-credentials-error";
+import InternalError from "./errors/internal-error";
 
 const loginUseCase = async (
   request: NextRequest
