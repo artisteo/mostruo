@@ -7,13 +7,13 @@ subgraph 3["modules"]
 subgraph 4["auth"]
 subgraph 5["client"]
 6["get-auth-client-cookie.tsx"]
-9["login-post-fetch.tsx"]
-A["logout-post-fetch.tsx"]
-B["use-auth.tsx"]
+9["login-post-fetch-result.tsx"]
+B["logout-post-fetch.tsx"]
+C["use-auth.tsx"]
 end
 subgraph 7["domain"]
 8["token.tsx"]
-I["errors.tsx"]
+A["errors.tsx"]
 P["login-dto.tsx"]
 Q["login-use-case.tsx"]
 subgraph R["service"]
@@ -27,13 +27,13 @@ W["logout-use-case.tsx"]
 Y["token-public-dto.tsx"]
 Z["user.tsx"]
 end
-subgraph C["components"]
-subgraph D["anonymous-content"]
-E["anonymous-content.tsx"]
+subgraph D["components"]
+subgraph E["anonymous-content"]
+F["anonymous-content.tsx"]
 end
-subgraph F["login-form"]
-G["login-form.tsx"]
-H["use-login-form.tsx"]
+subgraph G["login-form"]
+H["login-form.tsx"]
+I["use-login-form.tsx"]
 end
 subgraph J["register-form"]
 K["register-form.tsx"]
@@ -46,58 +46,61 @@ O["members-content.tsx"]
 end
 end
 subgraph 10["server"]
-11["http-response.tsx"]
+subgraph 11["controllers"]
 12["login-get-controller.tsx"]
-13["login-post-controller.tsx"]
-14["logout-get-controller.tsx"]
-15["logout-post-controller.tsx"]
+14["login-post-controller.tsx"]
+15["logout-get-controller.tsx"]
+16["logout-post-controller.tsx"]
+end
+13["http-response.tsx"]
 end
 end
-subgraph 16["environment"]
-17["environment-display.tsx"]
-18["use-environment.tsx"]
+subgraph 17["environment"]
+18["environment-display.tsx"]
+19["use-environment.tsx"]
 end
-subgraph 19["landing"]
-1A["page.tsx"]
+subgraph 1A["landing"]
+1B["page.tsx"]
 end
 end
 end
-1B["settings.tsx"]
+1C["settings.tsx"]
 end
 end
 6-->8
-B-->6
-B-->9
-B-->A
-E-->G
-E-->K
-G-->H
-H-->B
+9-->A
+9-->8
+C-->6
+C-->9
+C-->B
+F-->H
+F-->K
 H-->I
-M-->B
-M-->E
+I-->C
+M-->C
+M-->F
 M-->O
-O-->B
-Q-->I
+O-->C
+Q-->A
 Q-->S
 Q-->T
 Q-->U
 Q-->V
-S-->I
-T-->I
+S-->A
+T-->A
 T-->8
-U-->I
-V-->I
-W-->I
+U-->A
+V-->A
+W-->A
 W-->X
 X-->8
-12-->11
-13-->Q
-13-->11
-14-->11
-15-->W
-15-->11
-17-->18
-1A-->1B
-1A-->M
-1A-->17
+12-->13
+14-->Q
+14-->13
+15-->13
+16-->W
+16-->13
+18-->19
+1B-->1C
+1B-->M
+1B-->18
