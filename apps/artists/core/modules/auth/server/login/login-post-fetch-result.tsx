@@ -3,10 +3,10 @@
 
 import type { Result } from "neverthrow";
 import { Err, Ok } from "neverthrow";
-import type LoginDto from "../domain/login-dto";
-import type { LoginPostControllerResponse } from "../server/controllers/login-post-controller";
-import Token from "../domain/token";
-import InternalError from "../errors/internal-error";
+import type LoginDto from "../../domain/login-dto";
+import type { LoginPostControllerResponse } from "./controllers/login-post-controller";
+import Token from "../../domain/token";
+import InternalError from "../../errors/internal-error";
 
 const loginPostFetchResult = async (
   dto: LoginDto

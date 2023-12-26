@@ -1,5 +1,5 @@
 import type { NextResponse } from "next/server";
-import HttpResponse from "../http-response";
+import HttpResponse from "../../http-response";
 
 const LoginGetController = (): NextResponse => HttpResponse.HEALTH("Login");
 
