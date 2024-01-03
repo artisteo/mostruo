@@ -16,6 +16,7 @@ function HomePage(): JSX.Element {
           <ProductCard />
           <ProductCard />
           <ProductCard />
+          <ProductCard />
           {/* <ProductCard />
           <ProductCard />
           <ProductCard />
