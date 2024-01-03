@@ -1,92 +1,40 @@
 // import { IconContext } from "react-icons";
 
-function MenuIcon(): JSX.Element {
-  return (
-    <svg
-      className="h-5 w-5"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M4 6h16M4 12h8m-8 6h16"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-      />
-    </svg>
-  );
-}
-
-function UserIcon(): JSX.Element {
-  return (
-    <svg
-      className="h-5 w-5"
-      fill="none"
-      stroke="black"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M4 6h16M4 12h8m-8 6h16"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-      />
-    </svg>
-  );
-}
-
-function CartIcon(): JSX.Element {
-  return (
-    <svg
-      className="h-5 w-5"
-      fill="none"
-      stroke="black"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M4 6h16M4 12h8m-8 6h16"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-      />
-    </svg>
-  );
-}
-
-function HelpIcon(): JSX.Element {
-  return (
-    <svg
-      className="h-5 w-5"
-      fill="none"
-      stroke="black"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M4 6h16M4 12h8m-8 6h16"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-      />
-    </svg>
-  );
-}
+import {
+  CartIcon,
+  ClothesIcon,
+  HelpIcon,
+  MapIcon,
+  MenuIcon,
+  MoneyIcon,
+  PeopleIcon,
+  UserIcon,
+} from "./icons";
 
 function MenuItems(): JSX.Element {
   return (
     <>
       <li>
-        <button type="button">Item 1</button>
+        <button type="button">
+          <MapIcon /> Donde estamos
+        </button>
       </li>
       <li>
-        <button type="button">Item 2</button>
+        <button type="button">
+          <MoneyIcon /> Precios
+        </button>
       </li>
       <li>
-        <button type="button">Item 3</button>
+        <button type="button">
+          <PeopleIcon />
+          Equipo
+        </button>
+      </li>
+      <li>
+        <button type="button">
+          <ClothesIcon />
+          Ropa
+        </button>
       </li>
     </>
   );
@@ -94,34 +42,39 @@ function MenuItems(): JSX.Element {
 
 function NavBar(): JSX.Element {
   return (
-    <div className="navbar bg-base-100">
+    <div className="fixed top-0 z-50 navbar bg-base-100">
       <div className="navbar-start">
         <div className="dropdown">
           <div className="btn btn-ghost lg:hidden" role="button" tabIndex={0}>
-            <MenuIcon />
+            Menú <MenuIcon />
           </div>
-          <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+          <ul className="menu menu-lg dropdown-content mt-3 z-[1] shadow bg-base-100 rounded-box w-52">
             <MenuItems />
           </ul>
         </div>
-        <button className="btn btn-ghost text-xl" type="button">
-          daisyUI
-        </button>
-      </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal hidden lg:flex">
           <MenuItems />
+        </ul>
+      </div>
+      <div className="navbar-center">
+        <ul className="menu menu-horizontal">
+          <button className="btn btn-ghost text-xl" type="button">
+            Company logo
+          </button>
         </ul>
       </div>
       <div className="navbar-end">
         <button className="btn btn-ghost" type="button">
+          <span className="hidden lg:flex">Ayuda</span>
+          <HelpIcon />
+        </button>
+        <button className="btn btn-ghost" type="button">
+          <span className="hidden lg:flex">Tu cuenta</span>
           <UserIcon />
         </button>
         <button className="btn btn-ghost" type="button">
+          <span className="hidden lg:flex">Carrito</span>
           <CartIcon />
-        </button>
-        <button className="btn btn-ghost" type="button">
-          <HelpIcon />
         </button>
       </div>
     </div>
