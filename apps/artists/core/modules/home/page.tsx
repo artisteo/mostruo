@@ -1,25 +1,35 @@
+import PageContent from "./page-content";
+import Main from "./main";
 import NavBar from "./navbar";
 import ProductCard from "./product-card";
 
 function HomePage(): JSX.Element {
   return (
-    <>
+    <Main>
       <NavBar />
-      <main
-        className="relative pt-[80px] h-full"
-      >
-        <div className="h-full flex gap-4 flex-wrap content-center justify-center">
+      <PageContent>
+        <div
+          className="gap-4 p-4 bg-gray-300 
+        flex flex-wrap overflow-auto 
+        justify-center  w-full"
+        >
           <ProductCard />
           <ProductCard />
           <ProductCard />
-          {/* <ProductCard /> */}
-          {/* <ProductCard /> */}
-
-          {/* <ProductCard /> */}
-          {/* <ProductCard /> */}
+          {/* <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard /> */}
         </div>
-      </main>
-    </>
+      </PageContent>
+    </Main>
   );
 }
 

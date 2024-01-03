@@ -42,7 +42,7 @@ function MenuItems(): JSX.Element {
 
 function NavBar(): JSX.Element {
   return (
-    <div className="fixed top-0 z-50 navbar bg-base-100">
+    <header className="navbar bg-orange-600">
       <div className="navbar-start">
         <div className="dropdown">
           <div className="btn btn-ghost lg:hidden" role="button" tabIndex={0}>
@@ -77,7 +77,7 @@ function NavBar(): JSX.Element {
           <CartIcon />
         </button>
       </div>
-    </div>
+    </header>
   );
 }
 
