@@ -7,7 +7,7 @@ function PageContent({
 
   return (
     <div
-      className={`flex p-4  bg-black  overflow-hidden h-full ${
+      className={`flex bg-red-500 overflow-hidden h-full ${
         withBorder ? "border border-4 border-red-600" : ""
       }`}
     >

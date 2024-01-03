@@ -42,7 +42,7 @@ function MenuItems(): JSX.Element {
 
 function NavBar(): JSX.Element {
   return (
-    <header className="navbar bg-orange-600">
+    <header className="navbar bg-gray-300">
       <div className="navbar-start">
         <div className="dropdown">
           <div className="btn btn-ghost lg:hidden" role="button" tabIndex={0}>
@@ -64,10 +64,10 @@ function NavBar(): JSX.Element {
         </ul>
       </div>
       <div className="navbar-end">
-        <button className="btn btn-ghost" type="button">
+        {/* <button className="btn btn-ghost" type="button">
           <span className="hidden lg:flex">Ayuda</span>
           <HelpIcon />
-        </button>
+        </button> */}
         <button className="btn btn-ghost" type="button">
           <span className="hidden lg:flex">Tu cuenta</span>
           <UserIcon />

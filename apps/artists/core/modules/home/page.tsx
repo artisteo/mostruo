@@ -9,7 +9,7 @@ function HomePage(): JSX.Element {
       <NavBar />
       <PageContent>
         <div
-          className="gap-4 p-4 bg-gray-300 
+          className="gap-4 p-4 bg-blue-100 
         flex flex-wrap overflow-auto 
         justify-center  w-full"
         >
