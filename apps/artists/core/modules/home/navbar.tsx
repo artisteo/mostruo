@@ -46,7 +46,7 @@ function NavBar(): JSX.Element {
       <div className="navbar-start">
         <div className="dropdown">
           <div className="btn btn-ghost lg:hidden" role="button" tabIndex={0}>
-            Menú <MenuIcon />
+            <MenuIcon />
           </div>
           <ul className="menu menu-lg dropdown-content mt-3 z-[1] shadow bg-base-100 rounded-box w-52">
             <MenuItems />
@@ -58,7 +58,7 @@ function NavBar(): JSX.Element {
       </div>
       <div className="navbar-center">
         <ul className="menu menu-horizontal">
-          <button className="btn btn-ghost text-xl" type="button">
+          <button className="btn btn-ghost" type="button">
             Company logo
           </button>
         </ul>

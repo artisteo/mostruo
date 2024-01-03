@@ -2,6 +2,7 @@ import PageContent from "./page-content";
 import Main from "./main";
 import NavBar from "./navbar";
 import ProductCard from "./product-card";
+import Container from "./container";
 
 function HomePage(): JSX.Element {
   return (
@@ -9,25 +10,20 @@ function HomePage(): JSX.Element {
       <NavBar />
       <PageContent>
         <div
-          className="gap-4 p-4 bg-blue-100 
+          className="bg-blue-100 
         flex flex-wrap overflow-auto 
         justify-center  w-full"
         >
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          {/* <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard /> */}
+          <Container>
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+          </Container>
         </div>
       </PageContent>
     </Main>
