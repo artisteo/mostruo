@@ -16,9 +16,9 @@ end
 subgraph 11["home"]
 12["page.tsx"]
 end
-1A["layout.tsx"]
-1B["globals.css"]
-1C["page.tsx"]
+1B["layout.tsx"]
+1C["globals.css"]
+1D["page.tsx"]
 end
 subgraph 7["core"]
 subgraph 8["modules"]
@@ -29,7 +29,7 @@ subgraph C["controllers"]
 D["login-get-controller.tsx"]
 F["login-post-controller.tsx"]
 end
-1M["login-post-fetch-result.tsx"]
+1N["login-post-fetch-result.tsx"]
 end
 E["http-response.tsx"]
 subgraph V["logout"]
@@ -37,7 +37,7 @@ subgraph W["controllers"]
 X["logout-get-controller.tsx"]
 Y["logout-post-controller.tsx"]
 end
-1O["logout-post-fetch.tsx"]
+1P["logout-post-fetch.tsx"]
 end
 end
 subgraph G["domain"]
@@ -45,7 +45,7 @@ H["login-use-case.tsx"]
 subgraph K["auth-service"]
 L["save-token.tsx"]
 10["delete-auth-cookie.tsx"]
-1L["get-auth-client-cookie.tsx"]
+1M["get-auth-client-cookie.tsx"]
 end
 N["token.tsx"]
 O["login-dto.tsx"]
@@ -58,49 +58,50 @@ M["internal-error.tsx"]
 P["bad-dto-format-error.tsx"]
 Q["bad-json-format-error.tsx"]
 S["bad-credentials-error.tsx"]
-1N["fetch-error.tsx"]
+1O["fetch-error.tsx"]
 end
-subgraph 1G["client"]
-subgraph 1H["components"]
-subgraph 1I["auth-section"]
-1J["auth-section.tsx"]
+subgraph 1H["client"]
+subgraph 1I["components"]
+subgraph 1J["auth-section"]
+1K["auth-section.tsx"]
 end
-subgraph 1Q["anonymous-content"]
-1R["anonymous-content.tsx"]
+subgraph 1R["anonymous-content"]
+1S["anonymous-content.tsx"]
 end
-subgraph 1S["login-form"]
-1T["login-form.tsx"]
-1U["use-login-form.tsx"]
+subgraph 1T["login-form"]
+1U["login-form.tsx"]
+1V["use-login-form.tsx"]
 end
-subgraph 1V["register-form"]
-1W["register-form.tsx"]
+subgraph 1W["register-form"]
+1X["register-form.tsx"]
 end
-subgraph 1X["members-content"]
-1Y["members-content.tsx"]
+subgraph 1Y["members-content"]
+1Z["members-content.tsx"]
 end
 end
-1K["use-auth.tsx"]
-1P["use-effect-once.tsx"]
+1L["use-auth.tsx"]
+1Q["use-effect-once.tsx"]
 end
 end
 subgraph 13["home"]
 14["page.tsx"]
-15["main.tsx"]
-16["navbar.tsx"]
-17["icons.tsx"]
-18["page-content.tsx"]
-19["product-card.tsx"]
+15["container.tsx"]
+16["main.tsx"]
+17["navbar.tsx"]
+18["icons.tsx"]
+19["page-content.tsx"]
+1A["product-card.tsx"]
 end
-subgraph 1D["landing"]
-1E["page.tsx"]
+subgraph 1E["landing"]
+1F["page.tsx"]
 end
-subgraph 1Z["environment"]
-20["environment-display.tsx"]
-21["use-environment.tsx"]
+subgraph 20["environment"]
+21["environment-display.tsx"]
+22["use-environment.tsx"]
 end
 end
 end
-1F["settings.tsx"]
+1G["settings.tsx"]
 end
 end
 6-->D
@@ -128,27 +129,28 @@ Z-->10
 12-->14
 14-->15
 14-->16
-14-->18
+14-->17
 14-->19
-16-->17
-1A-->1B
-1C-->1E
-1E-->1F
-1E-->1J
-1E-->20
-1J-->1K
-1J-->1R
-1J-->1Y
+14-->1A
+17-->18
+1B-->1C
+1D-->1F
+1F-->1G
+1F-->1K
+1F-->21
 1K-->1L
-1K-->1M
-1K-->1O
-1K-->1P
-1L-->N
+1K-->1S
+1K-->1Z
+1L-->1M
+1L-->1N
+1L-->1P
+1L-->1Q
 1M-->N
-1M-->1N
-1R-->1T
-1R-->1W
-1T-->1U
-1U-->1K
-1Y-->1K
-20-->21
+1N-->N
+1N-->1O
+1S-->1U
+1S-->1X
+1U-->1V
+1V-->1L
+1Z-->1L
+21-->22
