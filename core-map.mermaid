@@ -72,20 +72,19 @@ subgraph 1F["environment"]
 1H["use-environment.tsx"]
 end
 subgraph 1I["home"]
-1J["container.tsx"]
-1K["icons.tsx"]
-1L["main.tsx"]
-1M["navbar.tsx"]
-1N["page-content.tsx"]
+1J["page.tsx"]
+end
+subgraph 1N["landing"]
 1O["page.tsx"]
-1P["product-card.tsx"]
-end
-subgraph 1Q["landing"]
-1R["page.tsx"]
 end
 end
 end
-1S["settings.tsx"]
+subgraph 1K["app"]
+subgraph 1L["components"]
+1M["product-card.tsx"]
+end
+end
+1P["settings.tsx"]
 end
 end
 8-->A
@@ -122,12 +121,7 @@ Y-->10
 1E-->15
 1E-->18
 1G-->1H
-1M-->1K
-1O-->1J
-1O-->1L
-1O-->1M
-1O-->1N
+1J-->1M
 1O-->1P
-1R-->1S
-1R-->S
-1R-->1G
+1O-->S
+1O-->1G
