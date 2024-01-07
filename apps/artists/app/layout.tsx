@@ -40,7 +40,7 @@ async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AppLayout sticky>
+        <AppLayout sticky={storeConfig.sticky}>
           <>
             <p>storeConfig.sticky {storeConfig.sticky ? "true" : "false"}</p>
             {children}
