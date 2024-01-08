@@ -8,6 +8,7 @@ export const config = {
 export default function middleware(req: NextRequest): NextResponse {
   const url = req.nextUrl;
   const hostname = req.headers.get("host");
+  console.log("🔥 ~ hostname:", hostname)
 
   const defaultStoreDomain = "camisetas";
   let subdomain = defaultStoreDomain;
