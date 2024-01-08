@@ -30,6 +30,18 @@ end
 1E["layout.tsx"]
 1F["globals.css"]
 1G["page.tsx"]
+subgraph 1H["store-config"]
+1I["get-store-config.tsx"]
+1J["store-config-repository.tsx"]
+1M["get-stores.tsx"]
+1N["store-config.tsx"]
+end
+subgraph 1O["stores"]
+subgraph 1P["[storeDomain]"]
+1Q["layout.tsx"]
+1R["page.tsx"]
+end
+end
 end
 subgraph 7["core"]
 subgraph 8["modules"]
@@ -73,6 +85,9 @@ subgraph 1C["home"]
 end
 end
 end
+subgraph 1K["utils"]
+1L["fake-timeout.tsx"]
+end
 end
 end
 6-->D
@@ -103,6 +118,13 @@ Z-->10
 16-->18
 1B-->1D
 1D-->19
-1E-->16
 1E-->1F
 1G-->1B
+1I-->1J
+1J-->1L
+1M-->1J
+1Q-->16
+1Q-->1I
+1R-->1L
+1R-->19
+1R-->1M
