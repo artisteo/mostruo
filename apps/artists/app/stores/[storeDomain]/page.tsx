@@ -12,8 +12,6 @@ function StoreHome({
       <h1>Store Home params.storeDomain {params.storeDomain}</h1>
       <ProductCard />
       <ProductCard />
-      <ProductCard />
-      <ProductCard />
     </div>
   );
 }
