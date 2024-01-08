@@ -5,15 +5,17 @@ import AppShell from "./app-shell";
 
 function AppLayout({
   children,
+  theme,
   sticky = false,
 }: {
   children: JSX.Element;
+  theme: string;
   sticky?: boolean;
 }): JSX.Element {
   return (
-    <AppShell sticky={sticky}>
+    <AppShell>
       <AppHeader />
-      <AppPage sticky={sticky}>
+      <AppPage sticky={sticky} theme={theme}>
         {children}
         <AppFooter />
       </AppPage>

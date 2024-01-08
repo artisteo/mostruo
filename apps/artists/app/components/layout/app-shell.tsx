@@ -1,12 +1,10 @@
 function AppShell({
   children,
-  sticky = false,
 }: {
   children: JSX.Element | JSX.Element[];
-  sticky?: boolean;
 }): JSX.Element {
   return (
-    <main className={`flex flex-col h-full ${sticky && "overflow-hidden"}`}>
+    <main className="flex flex-col h-full border-solid border-4 border-red-900">
       {children}
     </main>
   );
