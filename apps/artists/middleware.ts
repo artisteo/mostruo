@@ -8,17 +8,16 @@ export const config = {
 export default function middleware(req: NextRequest): NextResponse {
   const url = req.nextUrl;
   const hostname = req.headers.get("host");
-  console.log("🔥 ~ hostname:", hostname)
+  console.log("🔥 ~ hostname:", hostname);
 
   const defaultStoreDomain = "camisetas";
   let subdomain = defaultStoreDomain;
   if (process.env.NODE_ENV === "production") {
-    if (
-      hostname === "artists-git-main-artisteos-projects.vercel.app/"
-    ) {
+    if (hostname === "artists-git-main-artisteos-projects.vercel.app") {
       subdomain = "cosmetica";
     }
   }
+  console.log("🔥 ~ subdomain:", subdomain);
 
   if (url.pathname.startsWith(`/stores`)) {
     url.pathname = `/404`;
