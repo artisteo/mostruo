@@ -14,7 +14,7 @@ export default function middleware(req: NextRequest): NextResponse {
   let subdomain = defaultStoreDomain;
   if (process.env.NODE_ENV === "production") {
     if (
-      hostname === "https://artists-git-main-artisteos-projects.vercel.app/"
+      hostname === "artists-git-main-artisteos-projects.vercel.app/"
     ) {
       subdomain = "cosmetica";
     }
